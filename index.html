@@ -1388,13 +1388,13 @@
                 const email = this.querySelector('[name="email"]').value || 'не указан';
                 const message = this.querySelector('[name="message"]').value || 'не указано';
 
-                const text =
-                    '🔔 <b>Новая заявка с сайта Сафоль</b>%0A' +
-                    '%0A' +
-                    '👤 <b>Имя:</b> ' + name + '%0A' +
-                    '📞 <b>Телефон:</b> ' + phone + '%0A' +
-                    '✉️ <b>Email:</b> ' + email + '%0A' +
-                    '📝 <b>Сообщение:</b> ' + message;
+                const text = 
+    '🔔 <b>Новая заявка с сайта Сафоль</b>\n' +
+    '\n' +
+    '👤 <b>Имя:</b> ' + name + '\n' +
+    '📞 <b>Телефон:</b> ' + phone + '\n' +
+    '✉️ <b>Email:</b> ' + email + '\n' +
+    '📝 <b>Сообщение:</b> ' + message;
 
                 fetch('https://api.telegram.org/bot' + botToken + '/sendMessage', {
                     method: 'POST',
