@@ -6,13 +6,12 @@
     <title>Сафоль — мебель из фанеры и стеновые панели</title>
     <meta name="description" content="Сафоль — производство мебели из фанеры и стеновых панелей. Индивидуальные проекты, высокое качество, ручная работа." />
     
-    <!-- ===== ШРИФТЫ ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400&family=Inter:opsz,wght@14..32,200;300;400&display=swap" rel="stylesheet" />
     
     <style>
-        /* ===== СБРОС ===== */
+        /* ===== ВЕСЬ CSS (без изменений) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -49,7 +48,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== ЛАЙТБОКС ===== */
         .lightbox {
             position: fixed;
             inset: 0;
@@ -110,7 +108,6 @@
             padding: 0 32px;
         }
 
-        /* ===== ШРИФТЫ ===== */
         .heading-xxl {
             font-family: var(--font-heading);
             font-size: clamp(3rem, 7vw, 6rem);
@@ -184,9 +181,6 @@
             color: var(--white);
         }
 
-        /* ============================================================
-           HEADER
-           ============================================================ */
         .header {
             position: fixed;
             top: 0;
@@ -269,9 +263,6 @@
             transition: var(--transition);
         }
 
-        /* ============================================================
-           HERO
-           ============================================================ */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -323,9 +314,6 @@
             flex-wrap: wrap;
         }
 
-        /* ============================================================
-           КАРУСЕЛЬ
-           ============================================================ */
         .carousel-wrap {
             position: relative;
             width: 100%;
@@ -439,9 +427,6 @@
             border-radius: 3px;
         }
 
-        /* ============================================================
-           GALLERY
-           ============================================================ */
         .section {
             padding: 100px 0;
             position: relative;
@@ -527,9 +512,6 @@
             background: var(--gray-200);
         }
 
-        /* ============================================================
-           ABOUT
-           ============================================================ */
         .about {
             padding: 100px 0;
             background: rgba(255, 255, 255, 0.3);
@@ -566,9 +548,6 @@
             max-width: 100%;
         }
 
-        /* ============================================================
-           CONTACTS — С ГАЛОЧКОЙ
-           ============================================================ */
         .contacts-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -652,7 +631,6 @@
             min-height: 100px;
         }
 
-        /* ===== КАСТОМНАЯ ГАЛОЧКА ===== */
         .checkbox-wrapper {
             margin: 4px 0 8px;
         }
@@ -711,9 +689,6 @@
             color: var(--black);
         }
 
-        /* ============================================================
-           МОДАЛЬНОЕ ОКНО — ПЕРСОНАЛЬНЫЕ ДАННЫЕ
-           ============================================================ */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -811,9 +786,6 @@
             justify-content: center;
         }
 
-        /* ============================================================
-           FOOTER
-           ============================================================ */
         .footer {
             padding: 28px 0;
             background: var(--black);
@@ -888,52 +860,40 @@
             }
         }
 
-        /* ============================================================
-           АДАПТИВ
-           ============================================================ */
         @media (max-width: 992px) {
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
             .hero-content {
                 padding-right: 0;
                 text-align: center;
             }
-
             .hero .line {
                 margin-left: auto;
                 margin-right: auto;
             }
-
             .hero .text-body {
                 max-width: 100%;
                 margin-left: auto;
                 margin-right: auto;
             }
-
             .hero-actions {
                 justify-content: center;
             }
-
             .carousel-wrap {
                 aspect-ratio: 4/3;
             }
-
             .gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .about-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .lightbox img {
                 max-width: 95%;
                 max-height: 80%;
             }
-
             .logo img {
                 height: 72px;
             }
@@ -943,102 +903,81 @@
             .nav {
                 display: none;
             }
-
             .burger {
                 display: flex;
             }
-
             .hero {
                 padding: 80px 0 40px;
             }
-
             .carousel-wrap {
                 aspect-ratio: 1/1;
             }
-
             .carousel-btn {
                 width: 32px;
                 height: 32px;
                 font-size: 0.9rem;
             }
-
             .carousel-btn.prev {
                 left: 6px;
             }
-
             .carousel-btn.next {
                 right: 6px;
             }
-
             .carousel-dots {
                 bottom: 12px;
                 right: 16px;
             }
-
             .carousel-slide .slide-label {
                 bottom: 16px;
                 left: 16px;
                 font-size: 0.4rem;
                 padding: 3px 12px;
             }
-
             .gallery {
                 grid-template-columns: 1fr 1fr;
                 gap: 2px;
             }
-
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
-
             .contacts-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
             .header {
                 padding: 0 16px;
                 height: 72px;
             }
-
             .container {
                 padding: 0 16px;
             }
-
             .section {
                 padding: 60px 0;
             }
-
             .logo img {
                 height: 52px;
             }
-
             .lightbox {
                 padding: 20px;
             }
-
             .lightbox-close {
                 top: 16px;
                 right: 20px;
                 font-size: 2rem;
             }
-
             .modal-content {
                 padding: 28px 20px 24px;
                 max-height: 90vh;
                 border-radius: 8px;
             }
-
             .modal-content h3 {
                 font-size: 1.1rem;
                 margin-bottom: 14px;
             }
-
             .modal-body p {
                 font-size: 0.8rem;
             }
-
             .modal-close {
                 top: 12px;
                 right: 16px;
@@ -1050,48 +989,38 @@
             .hero .heading-xxl {
                 font-size: 2.2rem;
             }
-
             .carousel-wrap {
                 aspect-ratio: 4/3;
             }
-
             .gallery {
                 grid-template-columns: 1fr;
             }
-
             .gallery-item {
                 aspect-ratio: 4/3;
             }
-
             .hero-actions {
                 flex-direction: column;
                 width: 100%;
             }
-
             .hero-actions .btn {
                 width: 100%;
                 text-align: center;
             }
-
             .social {
                 flex-wrap: wrap;
             }
-
             .section-header {
                 margin-bottom: 32px;
             }
-
             .logo img {
                 height: 44px;
             }
-
             .lightbox img {
                 max-width: 98%;
                 max-height: 70%;
             }
         }
 
-        /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
         .nav-mobile {
             display: none;
         }
@@ -1125,7 +1054,6 @@
             .nav-mobile {
                 display: block;
             }
-
             .header .nav {
                 display: none;
             }
@@ -1134,29 +1062,22 @@
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- ===== HEADER ===== -->
     <header class="header" id="header">
         <div class="header-inner">
             <a href="/" class="logo">
                 <img src="images/logo.png" alt="Сафоль — мебель из фанеры" />
             </a>
-
             <div class="nav">
                 <a href="#panels">Панели</a>
                 <a href="#furniture">Мебель</a>
                 <a href="#about">О нас</a>
                 <a href="#contacts">Контакты</a>
             </div>
-
             <button class="burger" id="burgerBtn" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
-
         <div class="nav-mobile" id="mobileNav">
             <div class="nav">
                 <a href="#panels">Панели</a>
@@ -1167,9 +1088,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    HERO — КАРУСЕЛЬ
-    ============================================================ -->
+    <!-- ===== HERO — КАРУСЕЛЬ ===== -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
@@ -1192,48 +1111,51 @@
 
                 <div class="carousel-wrap" id="carousel">
                     <div class="carousel-track" id="carouselTrack">
+                        <!-- Слайд 1 -->
                         <div class="carousel-slide">
-                            <img src="images/furniture/01.jpg" alt="Стол из фанеры" loading="lazy" />
+                            <img src="images/01.jpg" alt="Стол из фанеры" loading="lazy" />
                             <span class="slide-label">Стол из фанеры</span>
                         </div>
+                        <!-- Слайд 2 -->
                         <div class="carousel-slide">
-                            <img src="images/furniture/02.jpg" alt="Стул из фанеры" loading="lazy" />
+                            <img src="images/02.jpg" alt="Стул из фанеры" loading="lazy" />
                             <span class="slide-label">Стул из фанеры</span>
                         </div>
+                        <!-- Слайд 3 -->
                         <div class="carousel-slide">
-                            <img src="images/furniture/03.jpg" alt="Полка из фанеры" loading="lazy" />
+                            <img src="images/03.jpg" alt="Полка из фанеры" loading="lazy" />
                             <span class="slide-label">Полка из фанеры</span>
                         </div>
+                        <!-- Слайд 4 -->
                         <div class="carousel-slide">
-                            <img src="images/furniture/04.jpg" alt="Шкаф из фанеры" loading="lazy" />
+                            <img src="images/04.jpg" alt="Шкаф из фанеры" loading="lazy" />
                             <span class="slide-label">Шкаф из фанеры</span>
                         </div>
+                        <!-- Слайд 5 -->
                         <div class="carousel-slide">
-                            <img src="images/panels/01.jpg" alt="Стеновая панель" loading="lazy" />
+                            <img src="images/05.jpg" alt="Стеновая панель" loading="lazy" />
                             <span class="slide-label">Стеновая панель</span>
                         </div>
+                        <!-- Слайд 6 -->
                         <div class="carousel-slide">
-                            <img src="images/panels/02.jpg" alt="Панель в спальне" loading="lazy" />
+                            <img src="images/06.jpg" alt="Панель в спальне" loading="lazy" />
                             <span class="slide-label">Панель в спальне</span>
                         </div>
+                        <!-- Слайд 7 -->
                         <div class="carousel-slide">
-                            <img src="images/panels/03.jpg" alt="Декоративная стена" loading="lazy" />
+                            <img src="images/07.jpg" alt="Декоративная стена" loading="lazy" />
                             <span class="slide-label">Декоративная стена</span>
                         </div>
                     </div>
-
                     <button class="carousel-btn prev" id="prevBtn">‹</button>
                     <button class="carousel-btn next" id="nextBtn">›</button>
-
                     <div class="carousel-dots" id="carouselDots"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    РАЗДЕЛ 1: СТЕНОВЫЕ ПАНЕЛИ
-    ============================================================ -->
+    <!-- ===== РАЗДЕЛ 1: СТЕНОВЫЕ ПАНЕЛИ ===== -->
     <section class="section" id="panels">
         <div class="container">
             <div class="section-header">
@@ -1241,39 +1163,36 @@
                 <p class="text-sm">Декоративные панели из фанеры и МДФ</p>
                 <div class="line line-center"></div>
             </div>
-
             <div class="gallery" id="panelsGallery">
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-01.jpg" alt="Панель в гостиной" loading="lazy" />
+                    <img src="images/panels-01.jpg" alt="Панель в гостиной" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-02.jpg" alt="Панель в спальне" loading="lazy" />
+                    <img src="images/panels-02.jpg" alt="Панель в спальне" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-03.jpg" alt="Декоративная стена" loading="lazy" />
+                    <img src="images/panels-03.jpg" alt="Декоративная стена" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-04.jpg" alt="Панель в прихожей" loading="lazy" />
+                    <img src="images/panels-04.jpg" alt="Панель в прихожей" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-05.jpg" alt="Акцентная стена" loading="lazy" />
+                    <img src="images/panels-05.jpg" alt="Акцентная стена" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-06.jpg" alt="Панель в офисе" loading="lazy" />
+                    <img src="images/panels-06.jpg" alt="Панель в офисе" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    РАЗДЕЛ 2: МЕБЕЛЬ
-    ============================================================ -->
+    <!-- ===== РАЗДЕЛ 2: МЕБЕЛЬ ===== -->
     <section class="section" id="furniture">
         <div class="container">
             <div class="section-header">
@@ -1281,39 +1200,36 @@
                 <p class="text-sm">Индивидуальные проекты из фанеры</p>
                 <div class="line line-center"></div>
             </div>
-
             <div class="gallery" id="furnitureGallery">
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-01.jpg" alt="Стол обеденный" loading="lazy" />
+                    <img src="images/furniture-01.jpg" alt="Стол обеденный" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-02.jpg" alt="Стул деревянный" loading="lazy" />
+                    <img src="images/furniture-02.jpg" alt="Стул деревянный" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-03.jpg" alt="Комод" loading="lazy" />
+                    <img src="images/furniture-03.jpg" alt="Комод" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-04.jpg" alt="Шкаф" loading="lazy" />
+                    <img src="images/furniture-04.jpg" alt="Шкаф" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-05.jpg" alt="Стеллаж" loading="lazy" />
+                    <img src="images/furniture-05.jpg" alt="Стеллаж" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-06.jpg" alt="Кресло" loading="lazy" />
+                    <img src="images/furniture-06.jpg" alt="Кресло" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    ABOUT
-    ============================================================ -->
+    <!-- ===== ABOUT ===== -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
@@ -1336,9 +1252,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    CONTACTS — С ГАЛОЧКОЙ
-    ============================================================ -->
+    <!-- ===== CONTACTS ===== -->
     <section class="section" id="contacts">
         <div class="container">
             <div class="section-header">
@@ -1346,36 +1260,22 @@
                 <p class="text-sm">Обсудим ваш проект</p>
                 <div class="line line-center"></div>
             </div>
-
             <div class="contacts-grid">
                 <div class="contacts-info">
                     <h3 class="heading-md">Свяжитесь с нами</h3>
-                    <p>
-                        <strong style="font-weight:400;">Телефон</strong><br>
-                        <a href="tel:+79307000227">+7 930 700-02-27</a>
-                    </p>
-                    <p>
-                        <strong style="font-weight:400;">Email</strong><br>
-                        <a href="mailto:info@safol.ru">info@safol.ru</a>
-                    </p>
-                    <p>
-                        <strong style="font-weight:400;">Адрес</strong><br>
-                        г. Нижний Новгород, ул. Максима Горького, д. 23а
-                    </p>
-
+                    <p><strong style="font-weight:400;">Телефон</strong><br><a href="tel:+79307000227">+7 930 700-02-27</a></p>
+                    <p><strong style="font-weight:400;">Email</strong><br><a href="mailto:info@safol.ru">info@safol.ru</a></p>
+                    <p><strong style="font-weight:400;">Адрес</strong><br>г. Нижний Новгород, ул. Максима Горького, д. 23а</p>
                     <div class="social">
                         <a href="https://t.me/safol_mebel1" target="_blank">Telegram</a>
                         <a href="https://www.instagram.com/safol_mebel?igsh=MXczNGwyYTNuODJ3aA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
                     </div>
                 </div>
-
                 <form class="contact-form" id="contactForm">
                     <input type="text" name="name" placeholder="Ваше имя" required />
                     <input type="tel" name="phone" placeholder="Телефон" required />
                     <input type="email" name="email" placeholder="Email" />
                     <textarea name="message" rows="4" placeholder="Опишите ваш проект"></textarea>
-
-                    <!-- ===== ГАЛОЧКА СОГЛАСИЯ ===== -->
                     <div class="checkbox-wrapper">
                         <label class="checkbox-label">
                             <input type="checkbox" id="agreeCheck" required />
@@ -1383,16 +1283,13 @@
                             Я согласен на <a href="#" id="privacyLink">обработку персональных данных</a>
                         </label>
                     </div>
-
                     <button type="submit" class="btn">Отправить</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-left">
@@ -1410,58 +1307,30 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    ЛАЙТБОКС
-    ============================================================ -->
+    <!-- ===== ЛАЙТБОКС ===== -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <button class="lightbox-close" onclick="closeLightbox()">✕</button>
         <img id="lightboxImg" src="" alt="" />
     </div>
 
-    <!-- ============================================================
-    МОДАЛЬНОЕ ОКНО — СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ
-    ============================================================ -->
+    <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
     <div class="modal-overlay" id="privacyModal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal()">✕</button>
             <h3>Согласие на обработку персональных данных</h3>
             <div class="modal-body">
-                <p>
-                    Настоящим я, действуя свободно, своей волей и в своем интересе, даю согласие 
-                    <strong>ООО «МАТИСС-ГРУПП»</strong> (ИНН: 5246057077, ОГРН: 1225200026699), 
-                    расположенному по адресу: г. Нижний Новгород, ул. Максима Горького, д. 23а, 
-                    на обработку моих персональных данных, указанных мной при заполнении формы обратной связи 
-                    на сайте <strong>Сафоль</strong>.
-                </p>
-                <p>
-                    <strong>Перечень персональных данных:</strong> фамилия, имя, отчество, номер телефона, 
-                    адрес электронной почты, а также иные данные, которые я добровольно сообщаю в сообщении.
-                </p>
-                <p>
-                    <strong>Цели обработки:</strong> предоставление ответа на мое обращение, информирование 
-                    о продукции и услугах компании, заключение и исполнение договоров.
-                </p>
-                <p>
-                    <strong>Способы обработки:</strong> сбор, запись, систематизация, накопление, хранение, 
-                    уточнение, обновление, изменение, извлечение, использование, обезличивание, блокирование, 
-                    удаление, уничтожение персональных данных.
-                </p>
-                <p>
-                    Настоящее согласие действует в течение <strong>5 (пяти) лет</strong> с момента его предоставления. 
-                    Согласие может быть отозвано мной в любой момент путем направления письменного уведомления 
-                    по адресу компании.
-                </p>
-                <p class="modal-small">
-                    * Отправляя форму, вы подтверждаете, что ознакомлены с условиями данного согласия.
-                </p>
+                <p>Настоящим я, действуя свободно, своей волей и в своем интересе, даю согласие <strong>ООО «МАТИСС-ГРУПП»</strong> (ИНН: 5246057077, ОГРН: 1225200026699), расположенному по адресу: г. Нижний Новгород, ул. Максима Горького, д. 23а, на обработку моих персональных данных, указанных мной при заполнении формы обратной связи на сайте <strong>Сафоль</strong>.</p>
+                <p><strong>Перечень персональных данных:</strong> фамилия, имя, отчество, номер телефона, адрес электронной почты, а также иные данные, которые я добровольно сообщаю в сообщении.</p>
+                <p><strong>Цели обработки:</strong> предоставление ответа на мое обращение, информирование о продукции и услугах компании, заключение и исполнение договоров.</p>
+                <p><strong>Способы обработки:</strong> сбор, запись, систематизация, накопление, хранение, уточнение, обновление, изменение, извлечение, использование, обезличивание, блокирование, удаление, уничтожение персональных данных.</p>
+                <p>Настоящее согласие действует в течение <strong>5 (пяти) лет</strong> с момента его предоставления. Согласие может быть отозвано мной в любой момент путем направления письменного уведомления по адресу компании.</p>
+                <p class="modal-small">* Отправляя форму, вы подтверждаете, что ознакомлены с условиями данного согласия.</p>
             </div>
             <button class="btn btn-primary modal-btn" onclick="closeModal()">Я согласен</button>
         </div>
     </div>
 
-    <!-- ============================================================
-    SCRIPTS
-    ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
     <script>
         (function() {
             'use strict';
@@ -1480,9 +1349,7 @@
                 });
             });
 
-            // ==========================================================
-            // МОДАЛЬНОЕ ОКНО — ПЕРСОНАЛЬНЫЕ ДАННЫЕ
-            // ==========================================================
+            // ===== МОДАЛЬНОЕ ОКНО =====
             const privacyModal = document.getElementById('privacyModal');
 
             document.getElementById('privacyLink').addEventListener('click', function(e) {
@@ -1502,13 +1369,10 @@
                 }
             });
 
-            // ==========================================================
-            // ФОРМА — ОТПРАВКА В TELEGRAM
-            // ==========================================================
+            // ===== ФОРМА =====
             document.getElementById('contactForm').addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                // Проверяем галочку
                 const agreeCheck = document.getElementById('agreeCheck');
                 if (!agreeCheck.checked) {
                     alert('Пожалуйста, подтвердите согласие на обработку персональных данных.');
@@ -1516,8 +1380,8 @@
                 }
 
                 // ===== ВСТАВЬТЕ СВОИ ДАННЫЕ =====
-                const botToken = '8060136298:AAFJZC5fO593xSf1Us1UOMzfH0GXh7zlzuU';    // ← сюда токен от @BotFather
-                const chatId = '716232442';         // ← сюда ваш chat_id
+                const botToken = '8060136298:AAFJZC5fO593xSf1Us1UOMzfH0GXh7zlzuU';
+                const chatId = '716232442';
 
                 const name = this.querySelector('[name="name"]').value;
                 const phone = this.querySelector('[name="phone"]').value;
@@ -1560,9 +1424,7 @@
                 });
             });
 
-            // ==========================================================
-            // ЛАЙТБОКС
-            // ==========================================================
+            // ===== ЛАЙТБОКС =====
             window.openLightbox = function(element) {
                 const img = element.querySelector('img');
                 if (!img) return;
@@ -1586,9 +1448,7 @@
                 }
             });
 
-            // ==========================================================
-            // КАРУСЕЛЬ
-            // ==========================================================
+            // ===== КАРУСЕЛЬ =====
             const track = document.getElementById('carouselTrack');
             const slides = track.querySelectorAll('.carousel-slide');
             const dotsContainer = document.getElementById('carouselDots');
@@ -1642,7 +1502,7 @@
 
             startAutoplay();
 
-            console.log('Сафоль — сайт с галочкой и модалкой загружен');
+            console.log('Сафоль — сайт загружен');
         })();
     </script>
 
