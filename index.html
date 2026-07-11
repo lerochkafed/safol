@@ -906,21 +906,11 @@
     .burger {
         display: flex;
     }
-
-    /* ===== ЛОГОТИП КРУПНЕЕ ===== */
-    .logo img {
-        height: 64px;  /* было 52px */
-    }
-
     .hero {
         padding: 80px 0 40px;
     }
 
-    /* ===== КАРУСЕЛЬ НА ВСЮ ШИРИНУ ===== */
-    .container {
-        padding: 0;  /* убираем отступы у контейнера */
-    }
-
+    /* ===== НОВЫЙ ПОРЯДОК: СНАЧАЛА КАРУСЕЛЬ, ПОТОМ ТЕКСТ ===== */
     .hero-grid {
         display: flex;
         flex-direction: column;
@@ -930,23 +920,17 @@
     .hero-image {
         order: 1;
         width: 100%;
-        margin: 0 -16px;  /* растягиваем на всю ширину */
-        width: calc(100% + 32px);
     }
 
     .hero-content {
         order: 2;
-        padding: 0 16px;  /* возвращаем отступы для текста */
+        padding-right: 0;
         text-align: center;
     }
 
     .carousel-wrap {
         aspect-ratio: 1/1;
-        border-radius: 0;  /* убираем скругление */
-        border-left: none;
-        border-right: none;
     }
-
     .carousel-btn {
         width: 32px;
         height: 32px;
@@ -984,8 +968,14 @@
         padding: 0 16px;
         height: 72px;
     }
+    .container {
+        padding: 0 16px;
+    }
     .section {
         padding: 60px 0;
+    }
+    .logo img {
+        height: 52px;
     }
     .lightbox {
         padding: 20px;
