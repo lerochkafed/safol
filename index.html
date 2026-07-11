@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Сафоль — мебель из фанеры и стеновые панели</title>
+    <meta name="description" content="Сафоль — производство мебели из фанеры и стеновых панелей. Индивидуальные проекты, высокое качество, ручная работа." />
+    
+    <!-- ===== ШРИФТЫ ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400&family=Inter:opsz,wght@14..32,200;300;400&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ===== СБРОС ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0c0c0c;
+            --white: #ffffff;
+            --gray-100: #f7f6f3;
+            --gray-200: #eae7e1;
+            --gray-300: #b8b2aa;
+            --gray-400: #7a756e;
+            --gray-500: #4a4642;
+            --wood: #b8a794;
+            --font-heading: 'Unbounded', 'Inter', sans-serif;
+            --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+            --transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--gray-100);
+            color: var(--black);
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.7;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ===== ЛАЙТБОКС ===== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 40px;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 30px 120px rgba(0, 0, 0, 0.4);
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== ШРИФТЫ ===== */
+        .heading-xxl {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 200;
+            line-height: 1.05;
+            letter-spacing: -0.06em;
+        }
+
+        .heading-lg {
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+            font-weight: 200;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+        }
+
+        .heading-md {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+
+        .text-body {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--gray-500);
+            line-height: 1.9;
+            max-width: 520px;
+        }
+
+        .text-sm {
+            font-size: 0.7rem;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+        }
+
+        .line {
+            width: 40px;
+            height: 1px;
+            background: var(--wood);
+            opacity: 0.25;
+            margin: 20px 0 28px;
+        }
+
+        .line-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            font-family: var(--font-heading);
+            font-size: 0.6rem;
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border: 1px solid var(--black);
+            background: transparent;
+            color: var(--black);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 32px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            background: rgba(247, 246, 243, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+            opacity: 0.85;
+        }
+
+        .nav {
+            display: flex;
+            gap: 36px;
+        }
+
+        .nav a {
+            font-family: var(--font-heading);
+            font-size: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav a:hover {
+            color: var(--black);
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .burger span {
+            display: block;
+            width: 22px;
+            height: 1px;
+            background: var(--black);
+            transition: var(--transition);
+        }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            background: var(--gray-100);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding-right: 20px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 0.45rem;
+            font-weight: 300;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--wood);
+            border: 1px solid rgba(184, 167, 148, 0.15);
+            padding: 4px 18px;
+            margin-bottom: 28px;
+        }
+
+        .hero .heading-xxl {
+            margin-bottom: 12px;
+        }
+
+        .hero .heading-xxl .accent {
+            color: var(--wood);
+            font-weight: 200;
+        }
+
+        .hero .text-body {
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================================
+           КАРУСЕЛЬ
+           ============================================================ */
+        .carousel-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .carousel-slide .slide-label {
+            position: absolute;
+            bottom: 24px;
+            left: 28px;
+            font-family: var(--font-heading);
+            font-size: 0.45rem;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 4px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .carousel-btn.prev {
+            left: 12px;
+        }
+
+        .carousel-btn.next {
+            right: 12px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px;
+            right: 28px;
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .carousel-dots button {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0;
+        }
+
+        .carousel-dots button.active {
+            background: var(--black);
+            width: 18px;
+            border-radius: 3px;
+        }
+
+        /* ============================================================
+           GALLERY
+           ============================================================ */
+        .section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            max-width: 600px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .section-header .heading-lg {
+            margin-bottom: 6px;
+        }
+
+        .section-header .text-sm {
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        .section-header .line {
+            margin: 16px auto 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: var(--gray-200);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item .hover-label {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            font-family: var(--font-heading);
+            font-size: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .gallery-item:hover .hover-label {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-item.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 0.5rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-300);
+            background: var(--gray-200);
+        }
+
+        /* ============================================================
+           ABOUT
+           ============================================================ */
+        .about {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .about-card .number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 0.4rem;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--wood);
+            opacity: 0.4;
+            margin-bottom: 12px;
+        }
+
+        .about-card .heading-md {
+            margin-bottom: 4px;
+        }
+
+        .about-card .text-body {
+            font-size: 0.9rem;
+            max-width: 100%;
+        }
+
+        /* ============================================================
+           CONTACTS — С ГАЛОЧКОЙ
+           ============================================================ */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contacts-info .heading-md {
+            margin-bottom: 16px;
+        }
+
+        .contacts-info p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--gray-500);
+        }
+
+        .contacts-info a {
+            color: var(--black);
+            text-decoration: none;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .contacts-info a:hover {
+            border-bottom-color: var(--black);
+        }
+
+        .social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social a {
+            font-family: var(--font-heading);
+            font-size: 0.45rem;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            text-decoration: none;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 6px 18px;
+            transition: var(--transition);
+        }
+
+        .social a:hover {
+            color: var(--black);
+            border-color: var(--black);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 14px 18px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 300;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            color: var(--black);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--black);
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ===== КАСТОМНАЯ ГАЛОЧКА ===== */
+        .checkbox-wrapper {
+            margin: 4px 0 8px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: var(--gray-500);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 3px;
+            flex-shrink: 0;
+            transition: var(--transition);
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .checkbox-label input:checked + .checkmark {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        .checkbox-label input:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        .checkbox-label a {
+            color: var(--wood);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .checkbox-label a:hover {
+            color: var(--black);
+        }
+
+        /* ============================================================
+           МОДАЛЬНОЕ ОКНО — ПЕРСОНАЛЬНЫЕ ДАННЫЕ
+           ============================================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--white);
+            max-width: 640px;
+            width: 100%;
+            max-height: 85vh;
+            padding: 40px 44px 36px;
+            border-radius: 12px;
+            box-shadow: 0 40px 120px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow-y: auto;
+            transform: scale(0.95);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--gray-400);
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--black);
+            transform: rotate(90deg);
+        }
+
+        .modal-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            margin-bottom: 20px;
+            padding-right: 32px;
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .modal-body p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--gray-500);
+            line-height: 1.8;
+        }
+
+        .modal-body strong {
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .modal-body .modal-small {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        .modal-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            padding: 28px 0;
+            background: var(--black);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer .text-sm {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.6rem;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .footer .text-sm a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer .text-sm a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer .footer-divider {
+            width: 1px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .footer .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            .footer .footer-left,
+            .footer .footer-right {
+                justify-content: center;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .footer .footer-divider {
+                width: 40px;
+                height: 1px;
+            }
+        }
+
+        /* ============================================================
+           АДАПТИВ
+           ============================================================ */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .hero .line {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero .text-body {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .carousel-wrap {
+                aspect-ratio: 4/3;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lightbox img {
+                max-width: 95%;
+                max-height: 80%;
+            }
+
+            .logo img {
+                height: 72px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 80px 0 40px;
+            }
+
+            .carousel-wrap {
+                aspect-ratio: 1/1;
+            }
+
+            .carousel-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+
+            .carousel-btn.prev {
+                left: 6px;
+            }
+
+            .carousel-btn.next {
+                right: 6px;
+            }
+
+            .carousel-dots {
+                bottom: 12px;
+                right: 16px;
+            }
+
+            .carousel-slide .slide-label {
+                bottom: 16px;
+                left: 16px;
+                font-size: 0.4rem;
+                padding: 3px 12px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 2px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .header {
+                padding: 0 16px;
+                height: 72px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .logo img {
+                height: 52px;
+            }
+
+            .lightbox {
+                padding: 20px;
+            }
+
+            .lightbox-close {
+                top: 16px;
+                right: 20px;
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                padding: 28px 20px 24px;
+                max-height: 90vh;
+                border-radius: 8px;
+            }
+
+            .modal-content h3 {
+                font-size: 1.1rem;
+                margin-bottom: 14px;
+            }
+
+            .modal-body p {
+                font-size: 0.8rem;
+            }
+
+            .modal-close {
+                top: 12px;
+                right: 16px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .heading-xxl {
+                font-size: 2.2rem;
+            }
+
+            .carousel-wrap {
+                aspect-ratio: 4/3;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                aspect-ratio: 4/3;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .social {
+                flex-wrap: wrap;
+            }
+
+            .section-header {
+                margin-bottom: 32px;
+            }
+
+            .logo img {
+                height: 44px;
+            }
+
+            .lightbox img {
+                max-width: 98%;
+                max-height: 70%;
+            }
+        }
+
+        /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
+        .nav-mobile {
+            display: none;
+        }
+
+        .nav-mobile.open {
+            display: block;
+            position: absolute;
+            top: 72px;
+            left: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-mobile.open .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-mobile.open .nav a {
+            font-size: 0.6rem;
+            padding: 6px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-mobile {
+                display: block;
+            }
+
+            .header .nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <img src="images/logo.png" alt="Сафоль — мебель из фанеры" />
+            </a>
+
+            <div class="nav">
+                <a href="#panels">Панели</a>
+                <a href="#furniture">Мебель</a>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+            </div>
+
+            <button class="burger" id="burgerBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="nav-mobile" id="mobileNav">
+            <div class="nav">
+                <a href="#panels">Панели</a>
+                <a href="#furniture">Мебель</a>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO — КАРУСЕЛЬ
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag">Собственное производство</span>
+                    <h1 class="heading-xxl">
+                        Мебель<br>
+                        <span class="accent">из фанеры</span>
+                    </h1>
+                    <div class="line"></div>
+                    <p class="text-body">
+                        Индивидуальные проекты мебели и стеновых панелей.<br>
+                        Ручная работа, высокое качество, внимание к деталям.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#panels" class="btn">Стеновые панели</a>
+                        <a href="#furniture" class="btn">Мебель</a>
+                    </div>
+                </div>
+
+                <div class="carousel-wrap" id="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="images/furniture/01.jpg" alt="Стол из фанеры" loading="lazy" />
+                            <span class="slide-label">Стол из фанеры</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/furniture/02.jpg" alt="Стул из фанеры" loading="lazy" />
+                            <span class="slide-label">Стул из фанеры</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/furniture/03.jpg" alt="Полка из фанеры" loading="lazy" />
+                            <span class="slide-label">Полка из фанеры</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/furniture/04.jpg" alt="Шкаф из фанеры" loading="lazy" />
+                            <span class="slide-label">Шкаф из фанеры</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/panels/01.jpg" alt="Стеновая панель" loading="lazy" />
+                            <span class="slide-label">Стеновая панель</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/panels/02.jpg" alt="Панель в спальне" loading="lazy" />
+                            <span class="slide-label">Панель в спальне</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/panels/03.jpg" alt="Декоративная стена" loading="lazy" />
+                            <span class="slide-label">Декоративная стена</span>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn prev" id="prevBtn">‹</button>
+                    <button class="carousel-btn next" id="nextBtn">›</button>
+
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    РАЗДЕЛ 1: СТЕНОВЫЕ ПАНЕЛИ
+    ============================================================ -->
+    <section class="section" id="panels">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-lg">Стеновые панели</h2>
+                <p class="text-sm">Декоративные панели из фанеры и МДФ</p>
+                <div class="line line-center"></div>
+            </div>
+
+            <div class="gallery" id="panelsGallery">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/panels/panels-01.jpg" alt="Панель в гостиной" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/panels/panels-02.jpg" alt="Панель в спальне" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/panels/panels-03.jpg" alt="Декоративная стена" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/panels/panels-04.jpg" alt="Панель в прихожей" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/panels/panels-05.jpg" alt="Акцентная стена" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/panels/panels-06.jpg" alt="Панель в офисе" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    РАЗДЕЛ 2: МЕБЕЛЬ
+    ============================================================ -->
+    <section class="section" id="furniture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-lg">Мебель</h2>
+                <p class="text-sm">Индивидуальные проекты из фанеры</p>
+                <div class="line line-center"></div>
+            </div>
+
+            <div class="gallery" id="furnitureGallery">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/furniture/furniture-01.jpg" alt="Стол обеденный" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/furniture/furniture-02.jpg" alt="Стул деревянный" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/furniture/furniture-03.jpg" alt="Комод" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/furniture/furniture-04.jpg" alt="Шкаф" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/furniture/furniture-05.jpg" alt="Стеллаж" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/furniture/furniture-06.jpg" alt="Кресло" loading="lazy" />
+                    <span class="hover-label">Смотреть</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT
+    ============================================================ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <span class="number">01</span>
+                    <h3 class="heading-md">Материалы</h3>
+                    <p class="text-body">Фанера высшего качества и МДФ. Натуральная текстура дерева в каждом изделии.</p>
+                </div>
+                <div class="about-card">
+                    <span class="number">02</span>
+                    <h3 class="heading-md">Индивидуальный подход</h3>
+                    <p class="text-body">Разрабатываем уникальные проекты под ваш интерьер. От эскиза до реализации.</p>
+                </div>
+                <div class="about-card">
+                    <span class="number">03</span>
+                    <h3 class="heading-md">Гарантия</h3>
+                    <p class="text-body">Даём гарантию на все виды работ. Чётко соблюдаем договорённости.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACTS — С ГАЛОЧКОЙ
+    ============================================================ -->
+    <section class="section" id="contacts">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-lg">Контакты</h2>
+                <p class="text-sm">Обсудим ваш проект</p>
+                <div class="line line-center"></div>
+            </div>
+
+            <div class="contacts-grid">
+                <div class="contacts-info">
+                    <h3 class="heading-md">Свяжитесь с нами</h3>
+                    <p>
+                        <strong style="font-weight:400;">Телефон</strong><br>
+                        <a href="tel:+79307000227">+7 930 700-02-27</a>
+                    </p>
+                    <p>
+                        <strong style="font-weight:400;">Email</strong><br>
+                        <a href="mailto:info@safol.ru">info@safol.ru</a>
+                    </p>
+                    <p>
+                        <strong style="font-weight:400;">Адрес</strong><br>
+                        г. Нижний Новгород, ул. Максима Горького, д. 23а
+                    </p>
+
+                    <div class="social">
+                        <a href="https://t.me/safol_mebel1" target="_blank">Telegram</a>
+                        <a href="https://www.instagram.com/safol_mebel?igsh=MXczNGwyYTNuODJ3aA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Ваше имя" required />
+                    <input type="tel" name="phone" placeholder="Телефон" required />
+                    <input type="email" name="email" placeholder="Email" />
+                    <textarea name="message" rows="4" placeholder="Опишите ваш проект"></textarea>
+
+                    <!-- ===== ГАЛОЧКА СОГЛАСИЯ ===== -->
+                    <div class="checkbox-wrapper">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeCheck" required />
+                            <span class="checkmark"></span>
+                            Я согласен на <a href="#" id="privacyLink">обработку персональных данных</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="text-sm">2022 © МАТИСС</span>
+                <span class="footer-divider"></span>
+                <span class="text-sm"><a href="#">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a></span>
+            </div>
+            <div class="footer-right">
+                <span class="text-sm">ООО «МАТИСС-ГРУПП»</span>
+                <span class="footer-divider"></span>
+                <span class="text-sm">ИНН: 5246057077</span>
+                <span class="footer-divider"></span>
+                <span class="text-sm">ОГРН: 1225200026699</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    ЛАЙТБОКС
+    ============================================================ -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightboxImg" src="" alt="" />
+    </div>
+
+    <!-- ============================================================
+    МОДАЛЬНОЕ ОКНО — СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ
+    ============================================================ -->
+    <div class="modal-overlay" id="privacyModal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <h3>Согласие на обработку персональных данных</h3>
+            <div class="modal-body">
+                <p>
+                    Настоящим я, действуя свободно, своей волей и в своем интересе, даю согласие 
+                    <strong>ООО «МАТИСС-ГРУПП»</strong> (ИНН: 5246057077, ОГРН: 1225200026699), 
+                    расположенному по адресу: г. Нижний Новгород, ул. Максима Горького, д. 23а, 
+                    на обработку моих персональных данных, указанных мной при заполнении формы обратной связи 
+                    на сайте <strong>Сафоль</strong>.
+                </p>
+                <p>
+                    <strong>Перечень персональных данных:</strong> фамилия, имя, отчество, номер телефона, 
+                    адрес электронной почты, а также иные данные, которые я добровольно сообщаю в сообщении.
+                </p>
+                <p>
+                    <strong>Цели обработки:</strong> предоставление ответа на мое обращение, информирование 
+                    о продукции и услугах компании, заключение и исполнение договоров.
+                </p>
+                <p>
+                    <strong>Способы обработки:</strong> сбор, запись, систематизация, накопление, хранение, 
+                    уточнение, обновление, изменение, извлечение, использование, обезличивание, блокирование, 
+                    удаление, уничтожение персональных данных.
+                </p>
+                <p>
+                    Настоящее согласие действует в течение <strong>5 (пяти) лет</strong> с момента его предоставления. 
+                    Согласие может быть отозвано мной в любой момент путем направления письменного уведомления 
+                    по адресу компании.
+                </p>
+                <p class="modal-small">
+                    * Отправляя форму, вы подтверждаете, что ознакомлены с условиями данного согласия.
+                </p>
+            </div>
+            <button class="btn btn-primary modal-btn" onclick="closeModal()">Я согласен</button>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ===== БУРГЕР =====
+            const burger = document.getElementById('burgerBtn');
+            const mobileNav = document.getElementById('mobileNav');
+
+            burger.addEventListener('click', function() {
+                mobileNav.classList.toggle('open');
+            });
+
+            document.querySelectorAll('#mobileNav .nav a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('open');
+                });
+            });
+
+            // ==========================================================
+            // МОДАЛЬНОЕ ОКНО — ПЕРСОНАЛЬНЫЕ ДАННЫЕ
+            // ==========================================================
+            const privacyModal = document.getElementById('privacyModal');
+
+            document.getElementById('privacyLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                privacyModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            window.closeModal = function() {
+                privacyModal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            // ==========================================================
+            // ФОРМА — ОТПРАВКА В TELEGRAM
+            // ==========================================================
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Проверяем галочку
+                const agreeCheck = document.getElementById('agreeCheck');
+                if (!agreeCheck.checked) {
+                    alert('Пожалуйста, подтвердите согласие на обработку персональных данных.');
+                    return;
+                }
+
+                // ===== ВСТАВЬТЕ СВОИ ДАННЫЕ =====
+                const botToken = '8060136298:AAFJZC5fO593xSf1Us1UOMzfH0GXh7zlzuU';    // ← сюда токен от @BotFather
+                const chatId = '716232442';         // ← сюда ваш chat_id
+
+                const name = this.querySelector('[name="name"]').value;
+                const phone = this.querySelector('[name="phone"]').value;
+                const email = this.querySelector('[name="email"]').value || 'не указан';
+                const message = this.querySelector('[name="message"]').value || 'не указано';
+
+                const text =
+                    '🔔 <b>Новая заявка с сайта Сафоль</b>%0A' +
+                    '%0A' +
+                    '👤 <b>Имя:</b> ' + name + '%0A' +
+                    '📞 <b>Телефон:</b> ' + phone + '%0A' +
+                    '✉️ <b>Email:</b> ' + email + '%0A' +
+                    '📝 <b>Сообщение:</b> ' + message;
+
+                fetch('https://api.telegram.org/bot' + botToken + '/sendMessage', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: text,
+                        parse_mode: 'HTML'
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+                        this.reset();
+                        agreeCheck.checked = false;
+                    } else {
+                        console.error('Ошибка Telegram:', data);
+                        alert('❌ Произошла ошибка при отправке. Попробуйте позвонить по телефону.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('❌ Произошла ошибка при отправке. Попробуйте позвонить по телефону.');
+                });
+            });
+
+            // ==========================================================
+            // ЛАЙТБОКС
+            // ==========================================================
+            window.openLightbox = function(element) {
+                const img = element.querySelector('img');
+                if (!img) return;
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightboxImg');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || 'Фото';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeLightbox = function() {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+
+            // ==========================================================
+            // КАРУСЕЛЬ
+            // ==========================================================
+            const track = document.getElementById('carouselTrack');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const dotsContainer = document.getElementById('carouselDots');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            let current = 0;
+            const total = slides.length;
+            let autoplay;
+
+            slides.forEach(function(_, i) {
+                const dot = document.createElement('button');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', function() { goTo(i); });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('button');
+
+            function goTo(index) {
+                if (index < 0) index = total - 1;
+                if (index >= total) index = 0;
+                current = index;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach(function(d, i) {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            function next() { goTo(current + 1); }
+
+            function prev() { goTo(current - 1); }
+
+            function startAutoplay() {
+                autoplay = setInterval(next, 4000);
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplay);
+                startAutoplay();
+            }
+
+            prevBtn.addEventListener('click', function() { prev();
+                resetAutoplay(); });
+            nextBtn.addEventListener('click', function() { next();
+                resetAutoplay(); });
+
+            const carousel = document.getElementById('carousel');
+            carousel.addEventListener('mouseenter', function() { clearInterval(autoplay); });
+            carousel.addEventListener('mouseleave', startAutoplay);
+
+            startAutoplay();
+
+            console.log('Сафоль — сайт с галочкой и модалкой загружен');
+        })();
+    </script>
+
+</body>
+</html>
