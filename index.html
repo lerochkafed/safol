@@ -11,9 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600&family=Inter:opsz,wght@14..32,200;300;400;500&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           СБРОС И ПЕРЕМЕННЫЕ
-           ============================================================ */
+        /* ===== СБРОС ===== */
         * {
             margin: 0;
             padding: 0;
@@ -56,9 +54,7 @@
             padding: 0 32px;
         }
 
-        /* ============================================================
-           ТИПОГРАФИЯ
-           ============================================================ */
+        /* ===== ТИПОГРАФИЯ ===== */
         .heading-xxl {
             font-family: var(--font-heading);
             font-size: clamp(3.5rem, 8vw, 6.5rem);
@@ -113,9 +109,7 @@
             margin-right: auto;
         }
 
-        /* ============================================================
-           КНОПКИ
-           ============================================================ */
+        /* ===== КНОПКИ ===== */
         .btn {
             display: inline-block;
             padding: 14px 40px;
@@ -223,7 +217,7 @@
         }
 
         /* ============================================================
-           HERO
+           HERO — НА ДЕСКТОПЕ: ТЕКСТ И КАРУСЕЛЬ РЯДОМ
            ============================================================ */
         .hero {
             min-height: 100vh;
@@ -814,7 +808,7 @@
         }
 
         /* ============================================================
-           АДАПТИВ
+           АДАПТИВ — ДЕСКТОП
            ============================================================ */
         @media (max-width: 992px) {
             .hero-grid {
@@ -860,9 +854,10 @@
         }
 
         /* ============================================================
-           МОБИЛЬНАЯ ВЕРСИЯ (ТОЛЬКО ТО, ЧТО ВЫ ПРОСИЛИ)
+           МОБИЛЬНАЯ ВЕРСИЯ — ТОЛЬКО ТО, ЧТО ВЫ ПРОСИЛИ
            ============================================================ */
         @media (max-width: 768px) {
+            /* ===== ШАПКА ===== */
             .nav {
                 display: none;
             }
@@ -870,7 +865,7 @@
                 display: flex;
             }
 
-            /* ЛОГОТИП БОЛЬШЕ */
+            /* ===== ЛОГОТИП БОЛЬШЕ ===== */
             .logo img {
                 height: 80px;
             }
@@ -879,8 +874,8 @@
                 padding: 80px 0 40px;
             }
 
-            /* Убираем отступы у контейнера */
-            .container {
+            /* ===== УБИРАЕМ ОТСТУПЫ ТОЛЬКО У КОНТЕЙНЕРА ГЕРОЯ ===== */
+            .hero .container {
                 padding: 0;
             }
 
@@ -891,35 +886,26 @@
                 gap: 0;
             }
 
-            /* 1. ЗАГОЛОВОК (первый) */
+            /* 1. ЗАГОЛОВОК */
             .hero-content {
                 order: 1;
-                padding: 0 16px 0 16px;
+                padding: 0 16px;
                 text-align: center;
             }
 
-            /* 2. КАРУСЕЛЬ (второй) */
+            /* 2. КАРУСЕЛЬ — РАСТЯГИВАЕМ ТОЛЬКО ЕЁ */
             .hero-image {
                 order: 2;
                 width: 100%;
-                margin: 16px -16px 0 -16px;
-                width: calc(100% + 32px);
+                margin: 16px 0 0 0;
             }
 
-            /* 3. ТЕКСТ И КНОПКИ (третий) */
-            .hero-content-bottom {
-                order: 3;
-                padding: 0 16px 0 16px;
-                text-align: center;
-                margin-top: 32px;
-            }
-
-            /* Карусель на всю ширину и без скруглений */
             .carousel-wrap {
                 aspect-ratio: 1/1;
                 border-radius: 0;
                 border-left: none;
                 border-right: none;
+                width: 100%;
             }
 
             /* ГАРАНТИЯ, ЧТО ФОТО ВИДНЫ */
@@ -952,6 +938,33 @@
                 padding: 3px 12px;
             }
 
+            /* 3. ТЕКСТ + КНОПКИ — С ОТСТУПАМИ, НЕ РАСТЯГИВАЕМ */
+            .hero-content-bottom {
+                order: 3;
+                padding: 0 16px;
+                text-align: center;
+                margin-top: 32px;
+            }
+
+            /* ===== УВЕЛИЧИВАЕМ ТЕКСТ НА МОБИЛКАХ, ЧТОБЫ НЕ ПЕРЕНОСИЛОСЬ ПО ОДНОМУ СЛОВУ ===== */
+            .hero-content-bottom .text-body {
+                font-size: 1.1rem;
+                max-width: 100%;
+                line-height: 1.8;
+                padding: 0 4px;
+            }
+
+            /* ===== КНОПКИ НА МОБИЛКАХ ===== */
+            .hero-content-bottom .hero-actions {
+                justify-content: center;
+                gap: 12px;
+            }
+            .hero-content-bottom .hero-actions .btn {
+                font-size: 0.55rem;
+                padding: 12px 28px;
+            }
+
+            /* ===== ОСТАЛЬНЫЕ БЛОКИ — НЕ РАСТЯГИВАЕМ ===== */
             .gallery {
                 grid-template-columns: 1fr 1fr;
                 gap: 2px;
@@ -1032,6 +1045,9 @@
                 max-width: 98%;
                 max-height: 70%;
             }
+            .hero-content-bottom .text-body {
+                font-size: 1rem;
+            }
         }
 
         /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
@@ -1110,21 +1126,23 @@
     </header>
 
     <!-- ============================================================
-    HERO — НА МОБИЛКАХ: ЗАГОЛОВОК → КАРУСЕЛЬ → ТЕКСТ + КНОПКИ
+    HERO — НА ДЕСКТОПЕ: ТЕКСТ И КАРУСЕЛЬ РЯДОМ
+    НА МОБИЛКАХ: ЗАГОЛОВОК → КАРУСЕЛЬ → ТЕКСТ + КНОПКИ
     ============================================================ -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- 1. ЗАГОЛОВОК (первый на мобильных) -->
+                <!-- 1. ЗАГОЛОВОК (на десктопе — слева, на мобилках — сверху) -->
                 <div class="hero-content">
                     <span class="hero-tag">Собственное производство</span>
                     <h1 class="heading-xxl">
                         Мебель<br>
                         <span class="accent">из фанеры</span>
                     </h1>
+                    <!-- НА ДЕСКТОПЕ ТУТ БЫЛ ТЕКСТ, МЫ ЕГО ПЕРЕНЕСЛИ ВНИЗ -->
                 </div>
 
-                <!-- 2. КАРУСЕЛЬ (второй на мобильных) -->
+                <!-- 2. КАРУСЕЛЬ (на десктопе — справа, на мобилках — по центру) -->
                 <div class="hero-image">
                     <div class="carousel-wrap" id="carousel">
                         <div class="carousel-track" id="carouselTrack">
@@ -1165,10 +1183,10 @@
                     </div>
                 </div>
 
-                <!-- 3. ТЕКСТ И КНОПКИ (третий на мобильных) -->
-                <div class="hero-content-bottom">
+                <!-- 3. ТЕКСТ И КНОПКИ (на десктопе — под заголовком слева, на мобилках — под каруселью) -->
+                <div class="hero-content-bottom" style="grid-column: 1 / -1; padding-top: 20px;">
                     <div class="line" style="margin: 0 auto 20px;"></div>
-                    <p class="text-body" style="max-width: 100%; margin: 0 auto 24px;">
+                    <p class="text-body" style="max-width: 100%; margin: 0 auto 24px; text-align: center;">
                         Индивидуальные проекты мебели и стеновых панелей.<br>
                         Ручная работа, высокое качество, внимание к деталям.
                     </p>
