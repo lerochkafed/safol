@@ -119,7 +119,7 @@
         }
 
         /* ============================================================
-           HEADER — НАВИГАЦИЯ УВЕЛИЧЕНА НА ДЕСКТОПЕ
+           HEADER
            ============================================================ */
         .header {
             position: fixed;
@@ -162,8 +162,8 @@
         .nav { display: flex; gap: 40px; }
         .nav a {
             font-family: var(--font-heading);
-            font-size: 0.7rem;          /* Увеличили */
-            font-weight: 500;            /* Сделали жирнее */
+            font-size: 0.7rem;
+            font-weight: 500;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--gray-400);
@@ -758,7 +758,6 @@
 
             .hero { padding: 80px 0 40px; }
 
-            /* ===== УБИРАЕМ ОТСТУПЫ У КОНТЕЙНЕРА ГЕРОЯ ===== */
             .hero .container {
                 padding: 0;
             }
@@ -769,7 +768,7 @@
                 gap: 0;
             }
 
-            /* ===== ЗАГОЛОВОК — ПЕРВЫЙ ===== */
+            /* ===== НА МОБИЛКАХ: ЗАГОЛОВОК ПЕРВЫЙ ===== */
             .hero-content {
                 order: 1;
                 padding: 0 16px 0 16px;
@@ -778,7 +777,7 @@
                 margin-bottom: 16px;
             }
 
-            /* ===== КАРУСЕЛЬ — ВТОРАЯ, РАСТЯНУТА ДО КРАЁВ ===== */
+            /* ===== НА МОБИЛКАХ: КАРУСЕЛЬ ВТОРАЯ, РАСТЯНУТА ===== */
             .hero-image {
                 order: 2;
                 width: 100%;
@@ -804,7 +803,7 @@
                 padding: 3px 12px;
             }
 
-            /* ===== ТЕКСТ И КНОПКИ — ТРЕТЬИ ===== */
+            /* ===== НА МОБИЛКАХ: ТЕКСТ И КНОПКИ ТРЕТЬИ ===== */
             .hero-content-bottom {
                 order: 3;
                 padding: 0 16px;
@@ -826,7 +825,6 @@
                 padding: 12px 28px;
             }
 
-            /* ===== ЛАЙТБОКС НА МОБИЛКАХ ===== */
             .lightbox img {
                 max-width: 95%;
                 max-height: 80%;
@@ -837,7 +835,6 @@
                 font-size: 2rem;
             }
 
-            /* ===== ОСТАЛЬНЫЕ БЛОКИ ===== */
             .gallery { grid-template-columns: 1fr 1fr; gap: 2px; }
             .about-grid { grid-template-columns: 1fr; gap: 24px; }
             .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -932,13 +929,22 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- ЛЕВАЯ КОЛОНКА: ЗАГОЛОВОК + ТЕКСТ + КНОПКИ -->
+                <!-- ЛЕВАЯ КОЛОНКА: ЗАГОЛОВОК + ТЕКСТ + КНОПКИ (как было на десктопе) -->
                 <div class="hero-content">
                     <span class="hero-tag">Собственное производство</span>
                     <h1 class="heading-xxl">
                         Мебель<br>
                         <span class="accent">из фанеры</span>
                     </h1>
+                    <div class="line"></div>
+                    <p class="text-body">
+                        Индивидуальные проекты мебели и стеновых панелей.<br>
+                        Ручная работа, высокое качество, внимание к деталям.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#panels" class="btn">Стеновые панели</a>
+                        <a href="#furniture" class="btn">Мебель</a>
+                    </div>
                 </div>
 
                 <!-- ПРАВАЯ КОЛОНКА: КАРУСЕЛЬ -->
@@ -979,19 +985,6 @@
                         <button class="carousel-btn next" id="nextBtn">›</button>
 
                         <div class="carousel-dots" id="carouselDots"></div>
-                    </div>
-                </div>
-
-                <!-- ТЕКСТ И КНОПКИ — НА ДЕСКТОПЕ ПОД ЗАГОЛОВКОМ, НА МОБИЛКАХ ПОД КАРУСЕЛЬЮ -->
-                <div class="hero-content-bottom" style="grid-column: 1 / -1; padding-top: 20px;">
-                    <div class="line" style="margin: 0 auto 20px;"></div>
-                    <p class="text-body" style="max-width: 100%; margin: 0 auto 24px; text-align: center;">
-                        Индивидуальные проекты мебели и стеновых панелей.<br>
-                        Ручная работа, высокое качество, внимание к деталям.
-                    </p>
-                    <div class="hero-actions" style="justify-content: center;">
-                        <a href="#panels" class="btn">Стеновые панели</a>
-                        <a href="#furniture" class="btn">Мебель</a>
                     </div>
                 </div>
             </div>
