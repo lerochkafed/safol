@@ -74,8 +74,10 @@
             font-weight: 400;
             letter-spacing: -0.02em;
         }
+
+        /* ===== УВЕЛИЧЕННЫЙ ТЕКСТ ===== */
         .text-body {
-            font-size: 1rem;
+            font-size: 1.15rem;
             font-weight: 300;
             color: var(--gray-500);
             line-height: 1.9;
@@ -97,13 +99,13 @@
         }
         .line-center { margin-left: auto; margin-right: auto; }
 
-        /* ===== КНОПКИ ===== */
+        /* ===== УВЕЛИЧЕННЫЕ КНОПКИ ===== */
         .btn {
             display: inline-block;
-            padding: 14px 40px;
+            padding: 16px 46px;
             font-family: var(--font-heading);
-            font-size: 0.6rem;
-            font-weight: 400;
+            font-size: 0.7rem;
+            font-weight: 500;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             border: 1px solid var(--black);
@@ -213,8 +215,8 @@
         .hero-tag {
             display: inline-block;
             font-family: var(--font-heading);
-            font-size: 0.6rem;
-            font-weight: 400;
+            font-size: 0.7rem;
+            font-weight: 500;
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--wood);
@@ -227,7 +229,7 @@
         .hero .text-body { margin-bottom: 36px; }
         .hero-actions {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
@@ -758,6 +760,7 @@
 
             .hero { padding: 80px 0 40px; }
 
+            /* Убираем отступы у контейнера героя */
             .hero .container {
                 padding: 0;
             }
@@ -768,16 +771,16 @@
                 gap: 0;
             }
 
-            /* ===== НА МОБИЛКАХ: ЗАГОЛОВОК ПЕРВЫЙ ===== */
+            /* ===== ЗАГОЛОВОК — ПЕРВЫЙ ===== */
             .hero-content {
                 order: 1;
                 padding: 0 16px 0 16px;
                 text-align: center;
                 align-items: center;
-                margin-bottom: 16px;
+                margin-bottom: 0;
             }
 
-            /* ===== НА МОБИЛКАХ: КАРУСЕЛЬ ВТОРАЯ, РАСТЯНУТА ===== */
+            /* ===== КАРУСЕЛЬ — ВТОРАЯ, СРАЗУ ПОД ЗАГОЛОВКОМ ===== */
             .hero-image {
                 order: 2;
                 width: 100%;
@@ -803,7 +806,7 @@
                 padding: 3px 12px;
             }
 
-            /* ===== НА МОБИЛКАХ: ТЕКСТ И КНОПКИ ТРЕТЬИ ===== */
+            /* ===== ТЕКСТ И КНОПКИ — ТРЕТЬИ ===== */
             .hero-content-bottom {
                 order: 3;
                 padding: 0 16px;
@@ -821,8 +824,8 @@
                 gap: 12px;
             }
             .hero-content-bottom .hero-actions .btn {
-                font-size: 0.55rem;
-                padding: 12px 28px;
+                font-size: 0.6rem;
+                padding: 14px 32px;
             }
 
             .lightbox img {
@@ -929,22 +932,15 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- ЛЕВАЯ КОЛОНКА: ЗАГОЛОВОК + ТЕКСТ + КНОПКИ (как было на десктопе) -->
+                <!-- ЛЕВАЯ КОЛОНКА: ЗАГОЛОВОК + ТЕКСТ + КНОПКИ (десктоп) -->
+                <!-- НА МОБИЛКАХ: ЗАГОЛОВОК — ПЕРВЫЙ, ТЕКСТ + КНОПКИ — ПОСЛЕ КАРУСЕЛИ -->
                 <div class="hero-content">
                     <span class="hero-tag">Собственное производство</span>
                     <h1 class="heading-xxl">
                         Мебель<br>
                         <span class="accent">из фанеры</span>
                     </h1>
-                    <div class="line"></div>
-                    <p class="text-body">
-                        Индивидуальные проекты мебели и стеновых панелей.<br>
-                        Ручная работа, высокое качество, внимание к деталям.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#panels" class="btn">Стеновые панели</a>
-                        <a href="#furniture" class="btn">Мебель</a>
-                    </div>
+                    <!-- НА ДЕСКТОПЕ ЭТОТ ТЕКСТ ТУТ, НА МОБИЛКАХ ОН ПЕРЕНЕСЁТСЯ ВНИЗ -->
                 </div>
 
                 <!-- ПРАВАЯ КОЛОНКА: КАРУСЕЛЬ -->
@@ -985,6 +981,21 @@
                         <button class="carousel-btn next" id="nextBtn">›</button>
 
                         <div class="carousel-dots" id="carouselDots"></div>
+                    </div>
+                </div>
+
+                <!-- ===== ТЕКСТ И КНОПКИ ===== -->
+                <!-- НА ДЕСКТОПЕ: ЭТОТ БЛОК СТОИТ НА МЕСТЕ ПОД ЗАГОЛОВКОМ -->
+                <!-- НА МОБИЛКАХ: ПЕРЕНОСИТСЯ ПОСЛЕ КАРУСЕЛИ -->
+                <div class="hero-content-bottom" style="grid-column: 1 / -1; padding-top: 20px;">
+                    <div class="line" style="margin: 0 auto 20px;"></div>
+                    <p class="text-body" style="max-width: 100%; margin: 0 auto 24px; text-align: center;">
+                        Индивидуальные проекты мебели и стеновых панелей.<br>
+                        Ручная работа, высокое качество, внимание к деталям.
+                    </p>
+                    <div class="hero-actions" style="justify-content: center;">
+                        <a href="#panels" class="btn">Стеновые панели</a>
+                        <a href="#furniture" class="btn">Мебель</a>
                     </div>
                 </div>
             </div>
@@ -1400,7 +1411,7 @@
 
             startAutoplay();
 
-            console.log('Сафоль — сайт полностью обновлён');
+            console.log('Сафоль — сайт обновлён');
         })();
     </script>
 
