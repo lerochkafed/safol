@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600&family=Inter:opsz,wght@14..32,200;300;400;500&display=swap" rel="stylesheet" />
     
     <style>
-        /* ===== ОБНУЛЕНИЕ И ПЕРЕМЕННЫЕ ===== */
+        /* ============================================================
+           СБРОС И ПЕРЕМЕННЫЕ
+           ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -54,11 +56,13 @@
             padding: 0 32px;
         }
 
-        /* ===== ТИПОГРАФИЯ (УВЕЛИЧЕННАЯ) ===== */
+        /* ============================================================
+           ТИПОГРАФИЯ
+           ============================================================ */
         .heading-xxl {
             font-family: var(--font-heading);
-            font-size: clamp(3.5rem, 8vw, 6.5rem); /* Увеличили */
-            font-weight: 500;                      /* Сделали жирнее */
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            font-weight: 500;
             line-height: 1.05;
             letter-spacing: -0.05em;
             color: var(--black);
@@ -66,8 +70,8 @@
 
         .heading-lg {
             font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 4vw, 3.6rem); /* Увеличили */
-            font-weight: 500;                      /* Сделали жирнее */
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 500;
             line-height: 1.15;
             letter-spacing: -0.03em;
             color: var(--black);
@@ -109,7 +113,9 @@
             margin-right: auto;
         }
 
-        /* ===== КНОПКИ ===== */
+        /* ============================================================
+           КНОПКИ
+           ============================================================ */
         .btn {
             display: inline-block;
             padding: 14px 40px;
@@ -241,7 +247,7 @@
         .hero-tag {
             display: inline-block;
             font-family: var(--font-heading);
-            font-size: 0.6rem;          /* Сделали крупнее */
+            font-size: 0.6rem;
             font-weight: 400;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -587,7 +593,9 @@
             min-height: 100px;
         }
 
-        /* ===== КАСТОМНАЯ ГАЛОЧКА ===== */
+        /* ============================================================
+           ГАЛОЧКА
+           ============================================================ */
         .checkbox-wrapper {
             margin: 4px 0 8px;
         }
@@ -851,7 +859,9 @@
             }
         }
 
-        /* ===== ВАЖНО: ТОЛЬКО ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+        /* ============================================================
+           МОБИЛЬНАЯ ВЕРСИЯ (ТОЛЬКО ТО, ЧТО ВЫ ПРОСИЛИ)
+           ============================================================ */
         @media (max-width: 768px) {
             .nav {
                 display: none;
@@ -862,7 +872,7 @@
 
             /* ЛОГОТИП БОЛЬШЕ */
             .logo img {
-                height: 80px; /* Увеличили с 52px до 80px */
+                height: 80px;
             }
 
             .hero {
@@ -874,24 +884,34 @@
                 padding: 0;
             }
 
-            /* Меняем порядок: ТЕКСТ → КАРУСЕЛЬ */
+            /* ===== НОВЫЙ ПОРЯДОК: ЗАГОЛОВОК → КАРУСЕЛЬ → ТЕКСТ + КНОПКИ ===== */
             .hero-grid {
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
+                gap: 0;
             }
 
+            /* 1. ЗАГОЛОВОК (первый) */
             .hero-content {
-                order: 1;  /* Текст ПЕРВЫЙ */
-                padding: 0 16px;
+                order: 1;
+                padding: 0 16px 0 16px;
                 text-align: center;
             }
 
+            /* 2. КАРУСЕЛЬ (второй) */
             .hero-image {
-                order: 2;  /* Карусель ВТОРАЯ */
+                order: 2;
                 width: 100%;
-                margin: 0 -16px;
+                margin: 16px -16px 0 -16px;
                 width: calc(100% + 32px);
+            }
+
+            /* 3. ТЕКСТ И КНОПКИ (третий) */
+            .hero-content-bottom {
+                order: 3;
+                padding: 0 16px 0 16px;
+                text-align: center;
+                margin-top: 32px;
             }
 
             /* Карусель на всю ширину и без скруглений */
@@ -900,6 +920,14 @@
                 border-radius: 0;
                 border-left: none;
                 border-right: none;
+            }
+
+            /* ГАРАНТИЯ, ЧТО ФОТО ВИДНЫ */
+            .carousel-slide img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
             }
 
             .carousel-btn {
@@ -1082,30 +1110,21 @@
     </header>
 
     <!-- ============================================================
-    HERO — СНАЧАЛА ТЕКСТ, ПОТОМ КАРУСЕЛЬ (на мобилках)
+    HERO — НА МОБИЛКАХ: ЗАГОЛОВОК → КАРУСЕЛЬ → ТЕКСТ + КНОПКИ
     ============================================================ -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- ТЕКСТ (первый на мобильных) -->
+                <!-- 1. ЗАГОЛОВОК (первый на мобильных) -->
                 <div class="hero-content">
                     <span class="hero-tag">Собственное производство</span>
                     <h1 class="heading-xxl">
                         Мебель<br>
                         <span class="accent">из фанеры</span>
                     </h1>
-                    <div class="line"></div>
-                    <p class="text-body">
-                        Индивидуальные проекты мебели и стеновых панелей.<br>
-                        Ручная работа, высокое качество, внимание к деталям.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#panels" class="btn">Стеновые панели</a>
-                        <a href="#furniture" class="btn">Мебель</a>
-                    </div>
                 </div>
 
-                <!-- КАРУСЕЛЬ (вторая на мобильных) -->
+                <!-- 2. КАРУСЕЛЬ (второй на мобильных) -->
                 <div class="hero-image">
                     <div class="carousel-wrap" id="carousel">
                         <div class="carousel-track" id="carouselTrack">
@@ -1143,6 +1162,19 @@
                         <button class="carousel-btn next" id="nextBtn">›</button>
 
                         <div class="carousel-dots" id="carouselDots"></div>
+                    </div>
+                </div>
+
+                <!-- 3. ТЕКСТ И КНОПКИ (третий на мобильных) -->
+                <div class="hero-content-bottom">
+                    <div class="line" style="margin: 0 auto 20px;"></div>
+                    <p class="text-body" style="max-width: 100%; margin: 0 auto 24px;">
+                        Индивидуальные проекты мебели и стеновых панелей.<br>
+                        Ручная работа, высокое качество, внимание к деталям.
+                    </p>
+                    <div class="hero-actions" style="justify-content: center;">
+                        <a href="#panels" class="btn">Стеновые панели</a>
+                        <a href="#furniture" class="btn">Мебель</a>
                     </div>
                 </div>
             </div>
