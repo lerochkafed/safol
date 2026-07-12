@@ -75,7 +75,6 @@
             letter-spacing: -0.02em;
         }
 
-        /* ===== УВЕЛИЧЕННЫЙ ТЕКСТ НА ДЕСКТОПЕ ===== */
         .text-body {
             font-size: 1.25rem;
             font-weight: 300;
@@ -99,7 +98,6 @@
         }
         .line-center { margin-left: auto; margin-right: auto; }
 
-        /* ===== УВЕЛИЧЕННЫЕ КНОПКИ НА ДЕСКТОПЕ ===== */
         .btn {
             display: inline-block;
             padding: 18px 52px;
@@ -759,7 +757,6 @@
 
             .hero { padding: 80px 0 40px; }
 
-            /* Убираем отступы у контейнера героя */
             .hero .container {
                 padding: 0;
             }
@@ -770,16 +767,14 @@
                 gap: 0;
             }
 
-            /* ===== ЗАГОЛОВОК — ПЕРВЫЙ ===== */
             .hero-content {
                 order: 1;
-                padding: 0 16px 0 16px;
+                padding: 0 16px;
                 text-align: center;
                 align-items: center;
                 margin-bottom: 0;
             }
 
-            /* ===== КАРУСЕЛЬ — ВТОРАЯ ===== */
             .hero-image {
                 order: 2;
                 width: 100%;
@@ -805,7 +800,6 @@
                 padding: 3px 12px;
             }
 
-            /* ===== ТЕКСТ И КНОПКИ — ТРЕТЬИ ===== */
             .hero-content-bottom {
                 order: 3;
                 padding: 0 16px;
@@ -827,14 +821,30 @@
                 padding: 14px 32px;
             }
 
-            /* ===== УВЕЛИЧИВАЕМ ФОТО В ГАЛЕРЕЕ НА МОБИЛКАХ ===== */
-            .gallery-item {
-                aspect-ratio: 4/3;
+            /* ===== ГАЛЕРЕЯ НА МОБИЛКАХ — КРАСИВО ===== */
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                padding: 0 4px;
             }
+
+            .gallery-item {
+                aspect-ratio: 1/1;
+                border-radius: 4px;
+                overflow: hidden;
+                background: var(--gray-200);
+            }
+
             .gallery-item img {
-                object-fit: contain !important;
-                background-color: var(--gray-100);
-                padding: 8px;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
+                padding: 0 !important;
+            }
+
+            .gallery-item .hover-label {
+                font-size: 0.45rem;
             }
 
             .lightbox img {
@@ -847,7 +857,6 @@
                 font-size: 2rem;
             }
 
-            .gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
             .about-grid { grid-template-columns: 1fr; gap: 24px; }
             .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
             .header { padding: 0 16px; height: 72px; }
@@ -861,9 +870,18 @@
         @media (max-width: 480px) {
             .hero .heading-xxl { font-size: 2.8rem; }
             .carousel-wrap { aspect-ratio: 4/3; }
-            .gallery { grid-template-columns: 1fr; gap: 8px; }
-            .gallery-item { aspect-ratio: 4/3; }
-            .gallery-item img { padding: 4px; }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 4px;
+                padding: 0 2px;
+            }
+
+            .gallery-item {
+                aspect-ratio: 1/1;
+                border-radius: 3px;
+            }
+
             .hero-actions { flex-direction: column; width: 100%; }
             .hero-actions .btn { width: 100%; text-align: center; }
             .social { flex-wrap: wrap; }
