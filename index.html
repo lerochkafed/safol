@@ -32,10 +32,7 @@
             --transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-body);
             background-color: var(--gray-100);
@@ -63,7 +60,6 @@
             letter-spacing: -0.05em;
             color: var(--black);
         }
-
         .heading-lg {
             font-family: var(--font-heading);
             font-size: clamp(2.2rem, 4vw, 3.6rem);
@@ -72,14 +68,12 @@
             letter-spacing: -0.03em;
             color: var(--black);
         }
-
         .heading-md {
             font-family: var(--font-heading);
             font-size: 1.2rem;
             font-weight: 400;
             letter-spacing: -0.02em;
         }
-
         .text-body {
             font-size: 1rem;
             font-weight: 300;
@@ -87,7 +81,6 @@
             line-height: 1.9;
             max-width: 520px;
         }
-
         .text-sm {
             font-size: 0.7rem;
             font-weight: 300;
@@ -95,7 +88,6 @@
             text-transform: uppercase;
             color: var(--gray-400);
         }
-
         .line {
             width: 40px;
             height: 1px;
@@ -103,11 +95,7 @@
             opacity: 0.25;
             margin: 20px 0 28px;
         }
-
-        .line-center {
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .line-center { margin-left: auto; margin-right: auto; }
 
         /* ===== КНОПКИ ===== */
         .btn {
@@ -125,7 +113,6 @@
             transition: var(--transition);
             text-decoration: none;
         }
-
         .btn:hover {
             background: var(--black);
             color: var(--white);
@@ -148,7 +135,6 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.03);
         }
-
         .header-inner {
             max-width: 1280px;
             margin: 0 auto;
@@ -157,7 +143,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -165,24 +150,15 @@
             transition: var(--transition);
             flex-shrink: 0;
         }
-
         .logo img {
             height: 100px;
             width: auto;
             display: block;
             transition: var(--transition);
         }
+        .logo:hover img { transform: scale(1.05); opacity: 0.85; }
 
-        .logo:hover img {
-            transform: scale(1.05);
-            opacity: 0.85;
-        }
-
-        .nav {
-            display: flex;
-            gap: 36px;
-        }
-
+        .nav { display: flex; gap: 36px; }
         .nav a {
             font-family: var(--font-heading);
             font-size: 0.5rem;
@@ -193,10 +169,7 @@
             text-decoration: none;
             transition: var(--transition);
         }
-
-        .nav a:hover {
-            color: var(--black);
-        }
+        .nav a:hover { color: var(--black); }
 
         .burger {
             display: none;
@@ -207,7 +180,6 @@
             cursor: pointer;
             padding: 4px;
         }
-
         .burger span {
             display: block;
             width: 22px;
@@ -226,21 +198,17 @@
             padding: 100px 0 60px;
             background: var(--gray-100);
         }
-
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
-
-        /* ЛЕВАЯ КОЛОНКА — ЗАГОЛОВОК + ТЕКСТ + КНОПКИ */
         .hero-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-
         .hero-tag {
             display: inline-block;
             font-family: var(--font-heading);
@@ -253,31 +221,13 @@
             padding: 6px 20px;
             margin-bottom: 28px;
         }
-
-        .hero .heading-xxl {
-            margin-bottom: 12px;
-        }
-
-        .hero .heading-xxl .accent {
-            color: var(--wood);
-            font-weight: 400;
-        }
-
-        .hero .text-body {
-            margin-bottom: 36px;
-        }
-
+        .hero .heading-xxl { margin-bottom: 12px; }
+        .hero .heading-xxl .accent { color: var(--wood); font-weight: 400; }
+        .hero .text-body { margin-bottom: 36px; }
         .hero-actions {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
-        }
-
-        /* ПРАВАЯ КОЛОНКА — КАРУСЕЛЬ */
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         /* ============================================================
@@ -292,14 +242,12 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
             overflow: hidden;
         }
-
         .carousel-track {
             display: flex;
             height: 100%;
             transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform;
         }
-
         .carousel-slide {
             min-width: 100%;
             height: 100%;
@@ -309,7 +257,6 @@
             padding: 20px;
             position: relative;
         }
-
         .carousel-slide img {
             width: 100%;
             height: 100%;
@@ -318,7 +265,6 @@
             user-select: none;
             -webkit-user-drag: none;
         }
-
         .carousel-slide .slide-label {
             position: absolute;
             bottom: 24px;
@@ -335,7 +281,6 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             z-index: 2;
         }
-
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -355,20 +300,13 @@
             align-items: center;
             justify-content: center;
         }
-
         .carousel-btn:hover {
             background: var(--black);
             color: var(--white);
             border-color: var(--black);
         }
-
-        .carousel-btn.prev {
-            left: 12px;
-        }
-
-        .carousel-btn.next {
-            right: 12px;
-        }
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
 
         .carousel-dots {
             position: absolute;
@@ -378,7 +316,6 @@
             gap: 8px;
             z-index: 2;
         }
-
         .carousel-dots button {
             width: 5px;
             height: 5px;
@@ -389,7 +326,6 @@
             transition: var(--transition);
             padding: 0;
         }
-
         .carousel-dots button.active {
             background: var(--black);
             width: 18px;
@@ -399,37 +335,21 @@
         /* ============================================================
            GALLERY
            ============================================================ */
-        .section {
-            padding: 100px 0;
-            position: relative;
-            z-index: 1;
-        }
-
+        .section { padding: 100px 0; position: relative; z-index: 1; }
         .section-header {
             max-width: 600px;
             margin: 0 auto 56px;
             text-align: center;
         }
-
-        .section-header .heading-lg {
-            margin-bottom: 6px;
-        }
-
-        .section-header .text-sm {
-            max-width: 440px;
-            margin: 0 auto;
-        }
-
-        .section-header .line {
-            margin: 16px auto 0;
-        }
+        .section-header .heading-lg { margin-bottom: 6px; }
+        .section-header .text-sm { max-width: 440px; margin: 0 auto; }
+        .section-header .line { margin: 16px auto 0; }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2px;
         }
-
         .gallery-item {
             position: relative;
             aspect-ratio: 1/1;
@@ -438,14 +358,12 @@
             transition: var(--transition);
             cursor: pointer;
         }
-
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
-
         .gallery-item .hover-label {
             position: absolute;
             inset: 0;
@@ -463,14 +381,8 @@
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.7);
         }
-
-        .gallery-item:hover .hover-label {
-            opacity: 1;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.03);
-        }
+        .gallery-item:hover .hover-label { opacity: 1; }
+        .gallery-item:hover img { transform: scale(1.03); }
 
         /* ============================================================
            ABOUT
@@ -482,14 +394,12 @@
             border-top: 1px solid rgba(0, 0, 0, 0.02);
             border-bottom: 1px solid rgba(0, 0, 0, 0.02);
         }
-
         .about-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             text-align: center;
         }
-
         .about-card .number {
             display: block;
             font-family: var(--font-heading);
@@ -501,15 +411,8 @@
             opacity: 0.4;
             margin-bottom: 12px;
         }
-
-        .about-card .heading-md {
-            margin-bottom: 4px;
-        }
-
-        .about-card .text-body {
-            font-size: 0.9rem;
-            max-width: 100%;
-        }
+        .about-card .heading-md { margin-bottom: 4px; }
+        .about-card .text-body { font-size: 0.9rem; max-width: 100%; }
 
         /* ============================================================
            CONTACTS
@@ -519,28 +422,20 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
         }
-
-        .contacts-info .heading-md {
-            margin-bottom: 16px;
-        }
-
+        .contacts-info .heading-md { margin-bottom: 16px; }
         .contacts-info p {
             margin-bottom: 8px;
             font-size: 0.95rem;
             font-weight: 300;
             color: var(--gray-500);
         }
-
         .contacts-info a {
             color: var(--black);
             text-decoration: none;
             transition: var(--transition);
             border-bottom: 1px solid transparent;
         }
-
-        .contacts-info a:hover {
-            border-bottom-color: var(--black);
-        }
+        .contacts-info a:hover { border-bottom-color: var(--black); }
 
         .social {
             display: flex;
@@ -548,7 +443,6 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
-
         .social a {
             font-family: var(--font-heading);
             font-size: 0.45rem;
@@ -561,18 +455,13 @@
             padding: 6px 18px;
             transition: var(--transition);
         }
-
-        .social a:hover {
-            color: var(--black);
-            border-color: var(--black);
-        }
+        .social a:hover { color: var(--black); border-color: var(--black); }
 
         .contact-form {
             display: flex;
             flex-direction: column;
             gap: 14px;
         }
-
         .contact-form input,
         .contact-form textarea {
             padding: 14px 18px;
@@ -584,26 +473,18 @@
             transition: var(--transition);
             color: var(--black);
         }
-
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
             border-color: var(--black);
             background: rgba(255, 255, 255, 0.6);
         }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+        .contact-form textarea { resize: vertical; min-height: 100px; }
 
         /* ============================================================
            ГАЛОЧКА
            ============================================================ */
-        .checkbox-wrapper {
-            margin: 4px 0 8px;
-        }
-
+        .checkbox-wrapper { margin: 4px 0 8px; }
         .checkbox-label {
             display: flex;
             align-items: center;
@@ -614,11 +495,7 @@
             cursor: pointer;
             user-select: none;
         }
-
-        .checkbox-label input[type="checkbox"] {
-            display: none;
-        }
-
+        .checkbox-label input[type="checkbox"] { display: none; }
         .checkmark {
             width: 18px;
             height: 18px;
@@ -629,12 +506,10 @@
             position: relative;
             background: rgba(255, 255, 255, 0.3);
         }
-
         .checkbox-label input:checked + .checkmark {
             background: var(--black);
             border-color: var(--black);
         }
-
         .checkbox-label input:checked + .checkmark::after {
             content: '✓';
             position: absolute;
@@ -645,7 +520,6 @@
             font-size: 12px;
             line-height: 1;
         }
-
         .checkbox-label a {
             color: var(--wood);
             text-decoration: underline;
@@ -653,10 +527,7 @@
             transition: var(--transition);
             cursor: pointer;
         }
-
-        .checkbox-label a:hover {
-            color: var(--black);
-        }
+        .checkbox-label a:hover { color: var(--black); }
 
         /* ============================================================
            МОДАЛЬНОЕ ОКНО
@@ -675,11 +546,7 @@
             transition: var(--transition);
             padding: 20px;
         }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
 
         .modal-content {
             background: var(--white);
@@ -694,10 +561,7 @@
             transform: scale(0.95);
             transition: var(--transition);
         }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
+        .modal-overlay.active .modal-content { transform: scale(1); }
 
         .modal-close {
             position: absolute;
@@ -711,11 +575,7 @@
             border: none;
             line-height: 1;
         }
-
-        .modal-close:hover {
-            color: var(--black);
-            transform: rotate(90deg);
-        }
+        .modal-close:hover { color: var(--black); transform: rotate(90deg); }
 
         .modal-content h3 {
             font-family: var(--font-heading);
@@ -726,37 +586,26 @@
             margin-bottom: 20px;
             padding-right: 32px;
         }
-
         .modal-body {
             display: flex;
             flex-direction: column;
             gap: 14px;
             margin-bottom: 24px;
         }
-
         .modal-body p {
             font-size: 0.9rem;
             font-weight: 300;
             color: var(--gray-500);
             line-height: 1.8;
         }
-
-        .modal-body strong {
-            color: var(--black);
-            font-weight: 500;
-        }
-
+        .modal-body strong { color: var(--black); font-weight: 500; }
         .modal-body .modal-small {
             font-size: 0.75rem;
             color: var(--gray-400);
             font-style: italic;
             margin-top: 4px;
         }
-
-        .modal-btn {
-            width: 100%;
-            justify-content: center;
-        }
+        .modal-btn { width: 100%; justify-content: center; }
 
         /* ============================================================
            FOOTER
@@ -766,7 +615,6 @@
             background: var(--black);
             border-top: 1px solid rgba(255, 255, 255, 0.03);
         }
-
         .footer-inner {
             max-width: 1280px;
             margin: 0 auto;
@@ -777,7 +625,6 @@
             flex-wrap: wrap;
             gap: 16px;
         }
-
         .footer .text-sm {
             color: rgba(255, 255, 255, 0.35);
             font-size: 0.6rem;
@@ -786,30 +633,24 @@
             line-height: 1.6;
             text-align: center;
         }
-
         .footer .text-sm a {
             color: rgba(255, 255, 255, 0.4);
             text-decoration: none;
             transition: var(--transition);
         }
-
-        .footer .text-sm a:hover {
-            color: rgba(255, 255, 255, 0.7);
-        }
+        .footer .text-sm a:hover { color: rgba(255, 255, 255, 0.7); }
 
         .footer .footer-divider {
             width: 1px;
             height: 24px;
             background: rgba(255, 255, 255, 0.06);
         }
-
         .footer .footer-left {
             display: flex;
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-
         .footer .footer-right {
             display: flex;
             align-items: center;
@@ -837,86 +678,47 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
             .hero-content {
                 align-items: center;
                 text-align: center;
             }
-
-            .hero .line {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
+            .hero .line { margin-left: auto; margin-right: auto; }
             .hero .text-body {
                 max-width: 100%;
                 margin-left: auto;
                 margin-right: auto;
             }
-
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .carousel-wrap {
-                aspect-ratio: 4/3;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .logo img {
-                height: 72px;
-            }
+            .hero-actions { justify-content: center; }
+            .carousel-wrap { aspect-ratio: 4/3; }
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: repeat(2, 1fr); }
+            .logo img { height: 72px; }
         }
 
-        /* ============================================================
-           МОБИЛЬНАЯ ВЕРСИЯ
-           ============================================================ */
         @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            .burger {
-                display: flex;
-            }
+            .nav { display: none; }
+            .burger { display: flex; }
+            .logo img { height: 80px; }
 
-            .logo img {
-                height: 80px;
-            }
-
-            .hero {
-                padding: 80px 0 40px;
-            }
-
-            .hero .container {
-                padding: 0;
-            }
+            .hero { padding: 80px 0 40px; }
+            .hero .container { padding: 0; }
 
             .hero-grid {
                 display: flex;
                 flex-direction: column;
                 gap: 0;
             }
-
             .hero-content {
                 order: 1;
                 padding: 0 16px;
                 text-align: center;
                 align-items: center;
             }
-
             .hero-image {
                 order: 2;
                 width: 100%;
                 margin: 16px 0 0 0;
             }
-
             .carousel-wrap {
                 aspect-ratio: 1/1;
                 border-radius: 0;
@@ -925,28 +727,10 @@
                 width: 100%;
             }
 
-            .carousel-slide img {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
-                display: block !important;
-            }
-
-            .carousel-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 0.9rem;
-            }
-            .carousel-btn.prev {
-                left: 6px;
-            }
-            .carousel-btn.next {
-                right: 6px;
-            }
-            .carousel-dots {
-                bottom: 12px;
-                right: 16px;
-            }
+            .carousel-btn { width: 32px; height: 32px; font-size: 0.9rem; }
+            .carousel-btn.prev { left: 6px; }
+            .carousel-btn.next { right: 6px; }
+            .carousel-dots { bottom: 12px; right: 16px; }
             .carousel-slide .slide-label {
                 bottom: 16px;
                 left: 16px;
@@ -960,14 +744,12 @@
                 text-align: center;
                 margin-top: 32px;
             }
-
             .hero-content-bottom .text-body {
                 font-size: 1.1rem;
                 max-width: 100%;
                 line-height: 1.8;
                 padding: 0 4px;
             }
-
             .hero-content-bottom .hero-actions {
                 justify-content: center;
                 gap: 12px;
@@ -977,96 +759,35 @@
                 padding: 12px 28px;
             }
 
-            .gallery {
-                grid-template-columns: 1fr 1fr;
-                gap: 2px;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .contacts-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .header {
-                padding: 0 16px;
-                height: 72px;
-            }
-            .section {
-                padding: 60px 0;
-            }
-            .lightbox {
-                padding: 20px;
-            }
-            .lightbox-close {
-                top: 16px;
-                right: 20px;
-                font-size: 2rem;
-            }
-            .modal-content {
-                padding: 28px 20px 24px;
-                max-height: 90vh;
-                border-radius: 8px;
-            }
-            .modal-content h3 {
-                font-size: 1.1rem;
-                margin-bottom: 14px;
-            }
-            .modal-body p {
-                font-size: 0.8rem;
-            }
-            .modal-close {
-                top: 12px;
-                right: 16px;
-                font-size: 1.5rem;
-            }
+            .gallery { grid-template-columns: 1fr 1fr; gap: 2px; }
+            .about-grid { grid-template-columns: 1fr; gap: 24px; }
+            .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
+            .header { padding: 0 16px; height: 72px; }
+            .section { padding: 60px 0; }
+            .lightbox { padding: 20px; }
+            .lightbox-close { top: 16px; right: 20px; font-size: 2rem; }
+            .modal-content { padding: 28px 20px 24px; max-height: 90vh; border-radius: 8px; }
+            .modal-content h3 { font-size: 1.1rem; margin-bottom: 14px; }
+            .modal-body p { font-size: 0.8rem; }
+            .modal-close { top: 12px; right: 16px; font-size: 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .hero .heading-xxl {
-                font-size: 2.8rem;
-            }
-            .carousel-wrap {
-                aspect-ratio: 4/3;
-            }
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-            .gallery-item {
-                aspect-ratio: 4/3;
-            }
-            .hero-actions {
-                flex-direction: column;
-                width: 100%;
-            }
-            .hero-actions .btn {
-                width: 100%;
-                text-align: center;
-            }
-            .social {
-                flex-wrap: wrap;
-            }
-            .section-header {
-                margin-bottom: 32px;
-            }
-            .logo img {
-                height: 72px;
-            }
-            .lightbox img {
-                max-width: 98%;
-                max-height: 70%;
-            }
-            .hero-content-bottom .text-body {
-                font-size: 1rem;
-            }
+            .hero .heading-xxl { font-size: 2.8rem; }
+            .carousel-wrap { aspect-ratio: 4/3; }
+            .gallery { grid-template-columns: 1fr; }
+            .gallery-item { aspect-ratio: 4/3; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .btn { width: 100%; text-align: center; }
+            .social { flex-wrap: wrap; }
+            .section-header { margin-bottom: 32px; }
+            .logo img { height: 72px; }
+            .lightbox img { max-width: 98%; max-height: 70%; }
+            .hero-content-bottom .text-body { font-size: 1rem; }
         }
 
         /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
-        .nav-mobile {
-            display: none;
-        }
-
+        .nav-mobile { display: none; }
         .nav-mobile.open {
             display: block;
             position: absolute;
@@ -1080,25 +801,16 @@
             border: 1px solid rgba(0, 0, 0, 0.04);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
         }
-
         .nav-mobile.open .nav {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
-
-        .nav-mobile.open .nav a {
-            font-size: 0.6rem;
-            padding: 6px 0;
-        }
+        .nav-mobile.open .nav a { font-size: 0.6rem; padding: 6px 0; }
 
         @media (max-width: 768px) {
-            .nav-mobile {
-                display: block;
-            }
-            .header .nav {
-                display: none;
-            }
+            .nav-mobile { display: block; }
+            .header .nav { display: none; }
         }
     </style>
 </head>
@@ -1165,32 +877,33 @@
                 <div class="hero-image">
                     <div class="carousel-wrap" id="carousel">
                         <div class="carousel-track" id="carouselTrack">
+                            <!-- ИСПРАВЛЕННЫЕ ПУТИ ДЛЯ КАРУСЕЛИ — ВСЕ ФАЙЛЫ В ОДНОЙ ПАПКЕ -->
                             <div class="carousel-slide">
-                                <img src="images/furniture/01.jpg" alt="Стол из фанеры" loading="lazy" />
+                                <img src="images/01.jpg" alt="Стол из фанеры" loading="lazy" />
                                 <span class="slide-label">Стол из фанеры</span>
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/furniture/02.jpg" alt="Стул из фанеры" loading="lazy" />
+                                <img src="images/02.jpg" alt="Стул из фанеры" loading="lazy" />
                                 <span class="slide-label">Стул из фанеры</span>
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/furniture/03.jpg" alt="Полка из фанеры" loading="lazy" />
+                                <img src="images/03.jpg" alt="Полка из фанеры" loading="lazy" />
                                 <span class="slide-label">Полка из фанеры</span>
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/furniture/04.jpg" alt="Шкаф из фанеры" loading="lazy" />
+                                <img src="images/04.jpg" alt="Шкаф из фанеры" loading="lazy" />
                                 <span class="slide-label">Шкаф из фанеры</span>
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/panels/01.jpg" alt="Стеновая панель" loading="lazy" />
+                                <img src="images/05.jpg" alt="Стеновая панель" loading="lazy" />
                                 <span class="slide-label">Стеновая панель</span>
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/panels/02.jpg" alt="Панель в спальне" loading="lazy" />
+                                <img src="images/06.jpg" alt="Панель в спальне" loading="lazy" />
                                 <span class="slide-label">Панель в спальне</span>
                             </div>
                             <div class="carousel-slide">
-                                <img src="images/panels/03.jpg" alt="Декоративная стена" loading="lazy" />
+                                <img src="images/07.jpg" alt="Декоративная стена" loading="lazy" />
                                 <span class="slide-label">Декоративная стена</span>
                             </div>
                         </div>
@@ -1218,27 +931,27 @@
 
             <div class="gallery" id="panelsGallery">
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-01.jpg" alt="Панель в гостиной" loading="lazy" />
+                    <img src="images/panels-01.jpg" alt="Панель в гостиной" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-02.jpg" alt="Панель в спальне" loading="lazy" />
+                    <img src="images/panels-02.jpg" alt="Панель в спальне" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-03.jpg" alt="Декоративная стена" loading="lazy" />
+                    <img src="images/panels-03.jpg" alt="Декоративная стена" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-04.jpg" alt="Панель в прихожей" loading="lazy" />
+                    <img src="images/panels-04.jpg" alt="Панель в прихожей" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-05.jpg" alt="Акцентная стена" loading="lazy" />
+                    <img src="images/panels-05.jpg" alt="Акцентная стена" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/panels/panels-06.jpg" alt="Панель в офисе" loading="lazy" />
+                    <img src="images/panels-06.jpg" alt="Панель в офисе" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
             </div>
@@ -1258,27 +971,27 @@
 
             <div class="gallery" id="furnitureGallery">
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-01.jpg" alt="Стол обеденный" loading="lazy" />
+                    <img src="images/furniture-01.jpg" alt="Стол обеденный" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-02.jpg" alt="Стул деревянный" loading="lazy" />
+                    <img src="images/furniture-02.jpg" alt="Стул деревянный" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-03.jpg" alt="Комод" loading="lazy" />
+                    <img src="images/furniture-03.jpg" alt="Комод" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-04.jpg" alt="Шкаф" loading="lazy" />
+                    <img src="images/furniture-04.jpg" alt="Шкаф" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-05.jpg" alt="Стеллаж" loading="lazy" />
+                    <img src="images/furniture-05.jpg" alt="Стеллаж" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/furniture/furniture-06.jpg" alt="Кресло" loading="lazy" />
+                    <img src="images/furniture-06.jpg" alt="Кресло" loading="lazy" />
                     <span class="hover-label">Смотреть</span>
                 </div>
             </div>
@@ -1614,7 +1327,7 @@
 
             startAutoplay();
 
-            console.log('Сафоль — сайт полностью обновлён');
+            console.log('Сафоль — сайт с исправленными путями загружен');
         })();
     </script>
 
