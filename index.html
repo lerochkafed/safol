@@ -75,9 +75,9 @@
             letter-spacing: -0.02em;
         }
 
-        /* ===== УВЕЛИЧЕННЫЙ ТЕКСТ ===== */
+        /* ===== УВЕЛИЧЕННЫЙ ТЕКСТ НА ДЕСКТОПЕ ===== */
         .text-body {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: 300;
             color: var(--gray-500);
             line-height: 1.9;
@@ -99,12 +99,12 @@
         }
         .line-center { margin-left: auto; margin-right: auto; }
 
-        /* ===== УВЕЛИЧЕННЫЕ КНОПКИ ===== */
+        /* ===== УВЕЛИЧЕННЫЕ КНОПКИ НА ДЕСКТОПЕ ===== */
         .btn {
             display: inline-block;
-            padding: 16px 46px;
+            padding: 18px 52px;
             font-family: var(--font-heading);
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.18em;
             text-transform: uppercase;
@@ -160,7 +160,6 @@
         }
         .logo:hover img { transform: scale(1.05); opacity: 0.85; }
 
-        /* ===== НАВИГАЦИЯ УВЕЛИЧЕНА ===== */
         .nav { display: flex; gap: 40px; }
         .nav a {
             font-family: var(--font-heading);
@@ -780,7 +779,7 @@
                 margin-bottom: 0;
             }
 
-            /* ===== КАРУСЕЛЬ — ВТОРАЯ, СРАЗУ ПОД ЗАГОЛОВКОМ ===== */
+            /* ===== КАРУСЕЛЬ — ВТОРАЯ ===== */
             .hero-image {
                 order: 2;
                 width: 100%;
@@ -828,6 +827,16 @@
                 padding: 14px 32px;
             }
 
+            /* ===== УВЕЛИЧИВАЕМ ФОТО В ГАЛЕРЕЕ НА МОБИЛКАХ ===== */
+            .gallery-item {
+                aspect-ratio: 4/3;
+            }
+            .gallery-item img {
+                object-fit: contain !important;
+                background-color: var(--gray-100);
+                padding: 8px;
+            }
+
             .lightbox img {
                 max-width: 95%;
                 max-height: 80%;
@@ -838,7 +847,7 @@
                 font-size: 2rem;
             }
 
-            .gallery { grid-template-columns: 1fr 1fr; gap: 2px; }
+            .gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
             .about-grid { grid-template-columns: 1fr; gap: 24px; }
             .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
             .header { padding: 0 16px; height: 72px; }
@@ -852,8 +861,9 @@
         @media (max-width: 480px) {
             .hero .heading-xxl { font-size: 2.8rem; }
             .carousel-wrap { aspect-ratio: 4/3; }
-            .gallery { grid-template-columns: 1fr; }
+            .gallery { grid-template-columns: 1fr; gap: 8px; }
             .gallery-item { aspect-ratio: 4/3; }
+            .gallery-item img { padding: 4px; }
             .hero-actions { flex-direction: column; width: 100%; }
             .hero-actions .btn { width: 100%; text-align: center; }
             .social { flex-wrap: wrap; }
@@ -932,18 +942,14 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- ЛЕВАЯ КОЛОНКА: ЗАГОЛОВОК + ТЕКСТ + КНОПКИ (десктоп) -->
-                <!-- НА МОБИЛКАХ: ЗАГОЛОВОК — ПЕРВЫЙ, ТЕКСТ + КНОПКИ — ПОСЛЕ КАРУСЕЛИ -->
                 <div class="hero-content">
                     <span class="hero-tag">Собственное производство</span>
                     <h1 class="heading-xxl">
                         Мебель<br>
                         <span class="accent">из фанеры</span>
                     </h1>
-                    <!-- НА ДЕСКТОПЕ ЭТОТ ТЕКСТ ТУТ, НА МОБИЛКАХ ОН ПЕРЕНЕСЁТСЯ ВНИЗ -->
                 </div>
 
-                <!-- ПРАВАЯ КОЛОНКА: КАРУСЕЛЬ -->
                 <div class="hero-image">
                     <div class="carousel-wrap" id="carousel">
                         <div class="carousel-track" id="carouselTrack">
@@ -984,9 +990,6 @@
                     </div>
                 </div>
 
-                <!-- ===== ТЕКСТ И КНОПКИ ===== -->
-                <!-- НА ДЕСКТОПЕ: ЭТОТ БЛОК СТОИТ НА МЕСТЕ ПОД ЗАГОЛОВКОМ -->
-                <!-- НА МОБИЛКАХ: ПЕРЕНОСИТСЯ ПОСЛЕ КАРУСЕЛИ -->
                 <div class="hero-content-bottom" style="grid-column: 1 / -1; padding-top: 20px;">
                     <div class="line" style="margin: 0 auto 20px;"></div>
                     <p class="text-body" style="max-width: 100%; margin: 0 auto 24px; text-align: center;">
