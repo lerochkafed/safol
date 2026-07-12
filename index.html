@@ -217,7 +217,7 @@
         }
 
         /* ============================================================
-           HERO — НА ДЕСКТОПЕ: ТЕКСТ И КАРУСЕЛЬ РЯДОМ
+           HERO
            ============================================================ */
         .hero {
             min-height: 100vh;
@@ -234,8 +234,11 @@
             align-items: center;
         }
 
+        /* ЛЕВАЯ КОЛОНКА — ЗАГОЛОВОК + ТЕКСТ + КНОПКИ */
         .hero-content {
-            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .hero-tag {
@@ -268,6 +271,13 @@
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
+        }
+
+        /* ПРАВАЯ КОЛОНКА — КАРУСЕЛЬ */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* ============================================================
@@ -808,7 +818,19 @@
         }
 
         /* ============================================================
-           АДАПТИВ — ДЕСКТОП
+           ГАРАНТИЯ ЗАГРУЗКИ ФОТО
+           ============================================================ */
+        .carousel-slide img,
+        .gallery-item img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            opacity: 1 !important;
+        }
+
+        /* ============================================================
+           АДАПТИВ
            ============================================================ */
         @media (max-width: 992px) {
             .hero-grid {
@@ -817,7 +839,7 @@
             }
 
             .hero-content {
-                padding-right: 0;
+                align-items: center;
                 text-align: center;
             }
 
@@ -854,10 +876,9 @@
         }
 
         /* ============================================================
-           МОБИЛЬНАЯ ВЕРСИЯ — ТОЛЬКО ТО, ЧТО ВЫ ПРОСИЛИ
+           МОБИЛЬНАЯ ВЕРСИЯ
            ============================================================ */
         @media (max-width: 768px) {
-            /* ===== ШАПКА ===== */
             .nav {
                 display: none;
             }
@@ -865,7 +886,6 @@
                 display: flex;
             }
 
-            /* ===== ЛОГОТИП БОЛЬШЕ ===== */
             .logo img {
                 height: 80px;
             }
@@ -874,26 +894,23 @@
                 padding: 80px 0 40px;
             }
 
-            /* ===== УБИРАЕМ ОТСТУПЫ ТОЛЬКО У КОНТЕЙНЕРА ГЕРОЯ ===== */
             .hero .container {
                 padding: 0;
             }
 
-            /* ===== НОВЫЙ ПОРЯДОК: ЗАГОЛОВОК → КАРУСЕЛЬ → ТЕКСТ + КНОПКИ ===== */
             .hero-grid {
                 display: flex;
                 flex-direction: column;
                 gap: 0;
             }
 
-            /* 1. ЗАГОЛОВОК */
             .hero-content {
                 order: 1;
                 padding: 0 16px;
                 text-align: center;
+                align-items: center;
             }
 
-            /* 2. КАРУСЕЛЬ — РАСТЯГИВАЕМ ТОЛЬКО ЕЁ */
             .hero-image {
                 order: 2;
                 width: 100%;
@@ -908,7 +925,6 @@
                 width: 100%;
             }
 
-            /* ГАРАНТИЯ, ЧТО ФОТО ВИДНЫ */
             .carousel-slide img {
                 width: 100% !important;
                 height: 100% !important;
@@ -938,7 +954,6 @@
                 padding: 3px 12px;
             }
 
-            /* 3. ТЕКСТ + КНОПКИ — С ОТСТУПАМИ, НЕ РАСТЯГИВАЕМ */
             .hero-content-bottom {
                 order: 3;
                 padding: 0 16px;
@@ -946,7 +961,6 @@
                 margin-top: 32px;
             }
 
-            /* ===== УВЕЛИЧИВАЕМ ТЕКСТ НА МОБИЛКАХ, ЧТОБЫ НЕ ПЕРЕНОСИЛОСЬ ПО ОДНОМУ СЛОВУ ===== */
             .hero-content-bottom .text-body {
                 font-size: 1.1rem;
                 max-width: 100%;
@@ -954,7 +968,6 @@
                 padding: 0 4px;
             }
 
-            /* ===== КНОПКИ НА МОБИЛКАХ ===== */
             .hero-content-bottom .hero-actions {
                 justify-content: center;
                 gap: 12px;
@@ -964,7 +977,6 @@
                 padding: 12px 28px;
             }
 
-            /* ===== ОСТАЛЬНЫЕ БЛОКИ — НЕ РАСТЯГИВАЕМ ===== */
             .gallery {
                 grid-template-columns: 1fr 1fr;
                 gap: 2px;
@@ -1126,23 +1138,30 @@
     </header>
 
     <!-- ============================================================
-    HERO — НА ДЕСКТОПЕ: ТЕКСТ И КАРУСЕЛЬ РЯДОМ
-    НА МОБИЛКАХ: ЗАГОЛОВОК → КАРУСЕЛЬ → ТЕКСТ + КНОПКИ
+    HERO
     ============================================================ -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- 1. ЗАГОЛОВОК (на десктопе — слева, на мобилках — сверху) -->
+                <!-- ЛЕВАЯ КОЛОНКА: ЗАГОЛОВОК + ТЕКСТ + КНОПКИ -->
                 <div class="hero-content">
                     <span class="hero-tag">Собственное производство</span>
                     <h1 class="heading-xxl">
                         Мебель<br>
                         <span class="accent">из фанеры</span>
                     </h1>
-                    <!-- НА ДЕСКТОПЕ ТУТ БЫЛ ТЕКСТ, МЫ ЕГО ПЕРЕНЕСЛИ ВНИЗ -->
+                    <div class="line"></div>
+                    <p class="text-body">
+                        Индивидуальные проекты мебели и стеновых панелей.<br>
+                        Ручная работа, высокое качество, внимание к деталям.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#panels" class="btn">Стеновые панели</a>
+                        <a href="#furniture" class="btn">Мебель</a>
+                    </div>
                 </div>
 
-                <!-- 2. КАРУСЕЛЬ (на десктопе — справа, на мобилках — по центру) -->
+                <!-- ПРАВАЯ КОЛОНКА: КАРУСЕЛЬ -->
                 <div class="hero-image">
                     <div class="carousel-wrap" id="carousel">
                         <div class="carousel-track" id="carouselTrack">
@@ -1180,19 +1199,6 @@
                         <button class="carousel-btn next" id="nextBtn">›</button>
 
                         <div class="carousel-dots" id="carouselDots"></div>
-                    </div>
-                </div>
-
-                <!-- 3. ТЕКСТ И КНОПКИ (на десктопе — под заголовком слева, на мобилках — под каруселью) -->
-                <div class="hero-content-bottom" style="grid-column: 1 / -1; padding-top: 20px;">
-                    <div class="line" style="margin: 0 auto 20px;"></div>
-                    <p class="text-body" style="max-width: 100%; margin: 0 auto 24px; text-align: center;">
-                        Индивидуальные проекты мебели и стеновых панелей.<br>
-                        Ручная работа, высокое качество, внимание к деталям.
-                    </p>
-                    <div class="hero-actions" style="justify-content: center;">
-                        <a href="#panels" class="btn">Стеновые панели</a>
-                        <a href="#furniture" class="btn">Мебель</a>
                     </div>
                 </div>
             </div>
